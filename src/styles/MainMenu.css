@@ -1,0 +1,17 @@
+.main-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  display: flex;
+  gap: 10px;
+}
+
+.main-menu button {
+  padding: 10px 15px;
+  background: rgba(0,255,255,0.1);
+  border: 1px solid rgba(0,255,255,0.3);
+  color: white;
+  cursor: pointer;
+}

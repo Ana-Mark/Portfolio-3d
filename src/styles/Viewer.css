@@ -1,0 +1,424 @@
+
+/*
+* {
+  outline: 1px solid red;
+}
+
+
+
+/* BASE */
+.app-container {
+  position: fixed; /* 🔥 importante */
+  inset: 0;
+  z-index: 200;
+
+  background:
+    radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4)),
+    radial-gradient(circle at 30% 40%, rgba(100,16,41,0.4), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(100,16,41,0.2) 1px, transparent 1px),
+    linear-gradient(#101014, #141418);
+
+   background-size: 100% 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+/* 3D MODEL CONTAINER*/
+.canvas-container {
+  position: relative;
+  
+  width: 70%;
+  height: 90%;
+  
+  right: 10%;
+  z-index: 0;
+
+      /*Cuadricula*/
+  background-image:
+  
+  linear-gradient(rgba(161, 194, 194, 0.500) 2px, transparent 5px),
+  linear-gradient(90deg, rgba(161, 194, 194, 0.500) 2px, transparent 5px),
+
+  linear-gradient(rgba(80, 80, 97, 0.904));
+
+  background-size: 60px 60px;
+
+  pointer-events: auto;
+}
+
+
+
+
+
+
+/*UI - MENU - BUTTONS*/
+.ui-menu {
+  position: absolute;
+
+  width: 10%;
+  height: 5%;
+
+  background-color: rgba(0, 255, 255, 0);
+
+  inset: 0;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+
+/* UI CARACTERISTICS MODEL - CONTAINER*/
+.ui-models {
+  position: absolute;
+
+  height: 90%;
+  width: 95%;
+
+  right: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+
+  
+}
+
+
+.right-ui{
+  position: absolute;
+  
+  height: 100%;
+  width: 24%;
+
+  right: 1%;
+ background-color: rgba(255, 0, 0, 0);
+  
+pointer-events: auto;
+}
+/*Botones UI*/
+.icon-tabs{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 50%;
+  top: 10%;
+  background-color: rgba(0, 255, 255, 0);
+}
+.icon-tabs button{
+
+
+ width: 50%;
+ height: 10%;
+
+
+}
+
+/*Titulo Descripcion */
+.content{
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+ color: aliceblue;
+  width: 100%;
+  height: 20%;
+
+  margin-left: 60px;
+  
+  background-color: rgba(38, 0, 255, 0);
+}
+.model-title{
+font-size: 25px;
+
+}
+.model-description{
+
+font-size: 20px;
+
+
+
+}
+
+
+.content-software{
+  position: absolute;
+ display: flex;
+  height: 15%;
+  width: 90%;
+  bottom: 35%;
+  background-color: rgba(46, 221, 11, 0.329);
+}
+.software-inline img {
+ 
+  width: 30px;
+  height: 30px;
+ 
+}
+
+
+/*============UI - UV LAYOUT=================*/
+
+/*CONTENEDOR*/
+.bottom-textures {
+ position: absolute;
+ display: flex;
+ align-items: stretch;
+
+ height: 30%;
+ width: 100%;
+
+ bottom: 0%;
+ 
+ border: 2px solid rgba(244, 248, 14, 0.877);
+ 
+ pointer-events: auto;
+}
+.content-uv {
+ position: absolute;
+
+ display: flex;
+  flex-direction: column;
+
+ gap: 8%;
+
+ height: 100%;
+ width: 20.8%;
+
+bottom: 238%;
+right: 0.9%;
+ 
+color: rgb(255, 255, 255);
+ 
+ pointer-events: none;
+}
+
+
+/* CONTENEDOR IMG*/
+.uv-sets-grid {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+ 
+  gap: 10px;
+  padding: 10px;
+
+  overflow-x: auto;       /* scroll horizontal */
+
+  pointer-events: auto;
+
+  background-color: rgba(10, 10, 71, 0.226);
+}
+
+
+/* DISPLAY SET*/
+.uv-set-column{
+  min-width: 120px;       /* tamaño fijo bonito */
+  height: 100%;
+
+ border: 2px solid rgba(244,248,14,0.4);
+  background-color: rgba(0, 255, 255, 0.199);
+
+  display: flex;
+  flex-direction: column;
+}
+/* DISPLAY IMG*/
+.uv-maps-column{
+  display: flex;
+  flex-direction: row;
+
+  gap: 20px;
+
+  overflow-y: auto;       /* 🔥 SCROLL vertical */
+  padding: 5px;
+  background-color: aqua;
+
+  flex: 1;                /* ocupa todo el alto restante */
+}
+/* IMG*/
+.uv-maps-column img {
+  width: 40%;
+  height: auto;
+
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+/* ASSETS CANVAS*/
+.assets-canvas {
+  /* hijo del ui-model*/
+  position: absolute;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+  width: 74%;
+  height: 100%;
+
+  left: 0;
+ pointer-events: auto;
+ 
+background-color: rgba(0, 255, 255, 0.486);
+
+}
+
+.assets-buttons {
+ position: absolute;
+
+ right: -20%;
+}
+
+.assets-view {
+  position: absolute;
+  width: 95%;
+  height: 87%;
+ gap: 1%;
+  display: flex;
+  
+  overflow-x: auto;
+  flex-direction: column;
+
+ 
+  background-color: rgba(255, 228, 196, 0.308);
+}
+
+.assets-view img {
+ 
+  height: 100%;
+  object-fit: contain;
+}
+
+/* DISPLAY UV SET MODEL 2*/
+
+/* 🔥 SOLO MODULAR */
+.modular-ui {
+  flex-direction: column;
+  
+
+  background-color: rgba(255, 196, 245, 0.295);
+}
+
+
+/* MATERIAL GALLERY distinta */
+.uv-modes {
+  position: relative;
+
+  height: 50%;
+  width: 10%;
+  bottom: 180%;
+  left: 80%;
+ 
+  pointer-events: auto;
+
+  background-color: rgba(8, 8, 240, 0);
+
+}
+.material-grid {
+  display: flex;
+  gap: 0.5%;
+ 
+  height: 100%;
+
+  background-color: rgb(128, 255, 0);
+
+}
+
+.material-column {
+  
+  display: flex;
+  flex-direction: column;
+
+}
+
+.modular-ui .uv-maps-column{
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+
+  overflow-y: auto;       /* 🔥 SCROLL vertical */
+  padding: 10px;
+  background-color: rgb(255, 196, 0);
+
+  flex: 1;  
+}
+
+.material-column img {
+  width: 40%;
+  height: auto;
+
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  object-fit: cover;
+}
+
+.modular-ui .assets-canvas{
+  position: absolute;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+  width: 74%;
+  height: 340%;
+
+  left: 0;
+  bottom: 0;
+ pointer-events: none;
+ 
+background-color: rgba(255, 51, 0, 0);
+
+}
+.modular-ui .assets-view {
+  position: absolute;
+  width: 95%;
+  height: 87%;
+ gap: 1%;
+  display: flex;
+  
+  overflow-x: auto;
+  flex-direction: column;
+
+ 
+  background-color: rgba(255, 228, 196, 0.308);
+}
+
+.modular-ui .assets-view img {
+  height: 100%;
+
+  object-fit: contain;
+
+
+
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

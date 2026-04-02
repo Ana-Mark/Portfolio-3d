@@ -1,0 +1,48 @@
+
+
+
+
+
+
+.render-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999; /* 🔥 más alto que TODO */
+  background: rgba(0,0,0,0.95);
+
+  display: flex;
+  flex-direction: column;
+
+  pointer-events: auto;
+}
+
+/* botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  z-index: 1000;
+}
+
+/* contenedor scroll */
+.render-scroll {
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 40px;
+
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* imágenes */
+.render-scroll img {
+  width: 80%;
+  max-width: 900px;
+
+  object-fit: contain;
+}

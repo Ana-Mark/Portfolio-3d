@@ -1,0 +1,13 @@
+// Punto de entrada de la app React
+
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
+import "./App.css"
+
+// Renderizamos la aplicación dentro del div #root
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
