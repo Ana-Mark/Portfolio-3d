@@ -142,6 +142,17 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
   
 
   useEffect(() => {
+  if (!gltf?.scene) return
+
+  const box = new THREE.Box3().setFromObject(gltf.scene)
+  const center = box.getCenter(new THREE.Vector3())
+
+  gltf.scene.position.sub(center)
+}, [gltf])
+
+
+
+  useEffect(() => {
    textures.forEach((tex, index) => {
      if (!tex) return
        tex.flipY = false
@@ -431,7 +442,8 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
 
 //PATH MODELO Y QUE HACE
-function Models({ activeModel, animationOn, activeMaps, uvMode }) {
+function Models({ activeModel, animationOn, activeMaps, uvMode,  }) {
+
 
   if (activeModel === null) return null
 

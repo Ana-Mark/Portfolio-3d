@@ -15,7 +15,7 @@ export default function Viewer({ setScreen, selectedModel }) {
 
     // 🔥 ESTADO PRINCIPAL
   //const [activeModel, setActiveModel] = useState(selectedModel);
-  const [activeModel ] = useState(selectedModel);
+  const [activeModel] = useState(selectedModel);
   
   const [activeSection, setActiveSection] = useState(
    selectedModel === 2 ? "video" : "description"
@@ -30,7 +30,24 @@ export default function Viewer({ setScreen, selectedModel }) {
 
   
 
-
+const CAMERA_CONFIG = [
+  {
+    position: [0.21277105461555995, 0.05505210998858599, -0.5340924309310153],
+    target: [0.07728372112301284, -0.021451073091122586, 0.16478306360324096]
+  },
+  {
+    position: [0.012934363928922187, 0.007499564186675162, -0.0793050484994271],
+    target: [-0.025580645995242735, -0.009182090552055877, 0.05288632877192715]
+  },
+  {
+    position: [1.9767916062671047, 0.0836272944922064, -3.205759092649313],
+    target: [-0.014810842834093532, -0.6065836249224077, -0.02455890044389561]
+  },
+  {
+    position: [-0.6119123122618138, 0.3832340895987131, -1.5967833911753857],
+    target: [-0.056397185883691046, 0.1804774909928045, 0.06936692286265257]
+  }
+]
 
   
 
@@ -68,6 +85,61 @@ useEffect(() => {
 
 
 
+useEffect(() => {
+  if (!controlsRef.current) return
+
+  const config = CAMERA_CONFIG[activeModel]
+  if (!config) return
+
+  const controls = controlsRef.current
+  const camera = controls.object
+
+  // mover cámara
+  camera.position.set(...config.position)
+
+  // mover target
+  controls.target.set(...config.target)
+
+  // 🔥 CLAVE: forzar sync en el siguiente frame
+  requestAnimationFrame(() => {
+    controls.target.set(0, 0, 0)
+    controls.update()
+  })
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [activeModel])
+
+
+
+
+
+
+useEffect(() => {
+  const handleKey = (e) => {
+    if (e.key !== "c") return
+
+    const controls = controlsRef.current
+    if (!controls) return
+
+    const camera = controls.object
+
+    const data = {
+      position: camera.position.toArray(),
+      target: controls.target.toArray()
+    }
+
+    console.log("📸 CAMERA SNAPSHOT:", data)
+  }
+
+  window.addEventListener("keydown", handleKey)
+  return () => window.removeEventListener("keydown", handleKey)
+}, [])
+
+
+
+
+
+
 
 
   return (
@@ -81,7 +153,22 @@ useEffect(() => {
         
        
 
-       <Canvas camera={{ position: [1, 0.5, 1], near: 0.01, far: 1000 }}>
+       <Canvas
+         camera={{ near: 0.01, far: 1000 }}
+onCreated={({ camera }) => {
+  const config = CAMERA_CONFIG[activeModel]
+  if (!config) return
+
+  camera.position.set(...config.position)
+
+  requestAnimationFrame(() => {
+    if (!controlsRef.current) return
+
+    controlsRef.current.target.set(...config.target)
+    controlsRef.current.update()
+  })
+}}
+        >
 
           <ambientLight intensity={0.3} />
           <directionalLight position={[3, 5, -2]} intensity={2} />
@@ -103,7 +190,13 @@ useEffect(() => {
             />
           </Suspense>
 
-          <OrbitControls ref={controlsRef} />
+          <OrbitControls
+  ref={controlsRef}
+  makeDefault
+  enablePan={true}
+  minDistance={0.1}
+  maxDistance={5}
+/>
 
         </Canvas>
         
