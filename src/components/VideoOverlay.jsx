@@ -9,29 +9,26 @@ function VideoOverlay({ activeModel, isVisible, MODELS, onClose}) {
 
   // Obtener el vídeo del modelo actual
     const video = MODELS[activeModel]?.video
+    console.log("VIDEO OVERLAY RENDER");
+console.log(video);
+
+console.log("VIDEO SIZE:", document.querySelector("video")?.getBoundingClientRect());
 
 
 
-  // ==============================
-  // 🎨 RENDER
-  // ==============================
 
   
   return (
     <div className="render-overlay">
       <div className="render-scroll">
-        <video
-          src={video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            width: "98%",
-            borderRadius: "10px",
-            marginTop: "35px"
-          }}
-        />
+       <video
+  src={video}
+  autoPlay
+  loop
+  muted
+  playsInline
+  controls
+/>
       </div>
 
       <button onClick={onClose}>

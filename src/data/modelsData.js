@@ -66,7 +66,7 @@ export const MODELS = [
     description: "Environment modular system.",
 
     // 👇 ahora el vídeo también vive aquí
-    video: "/videos/Video_Modular.mp4",
+    video: "/videos/Video_Modular-Trim_1.gif",
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },

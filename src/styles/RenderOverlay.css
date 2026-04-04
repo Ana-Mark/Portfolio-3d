@@ -7,13 +7,20 @@
 .render-overlay {
   position: fixed;
   inset: 0;
-  z-index: 999; /* 🔥 más alto que TODO */
+  z-index: 99999; /* 🔥 más alto que TODO */
   background: rgba(0,0,0,0.95);
 
   display: flex;
   flex-direction: column;
 
   pointer-events: auto;
+}
+video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+  object-fit: contain;
 }
 
 /* botón cerrar */

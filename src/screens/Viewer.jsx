@@ -219,6 +219,7 @@ onCreated={({ camera }) => {
        isVisible={activeSection === "video"}
        MODELS={MODELS}
        onClose={() => setActiveSection("assets")}
+       
       />
 
 
