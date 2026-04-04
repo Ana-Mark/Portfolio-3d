@@ -146,7 +146,7 @@ useEffect(() => {
       
 
 
-      {/* ================= BOTONES EXTRA ================= */}
+      {/* ================= BOTONES EXTRA ================= 
       <div className="ui-menu">
 
         <button onClick={() => setScreen("selector")}>
@@ -154,7 +154,7 @@ useEffect(() => {
         </button>
 
        
-      </div>
+      </div>*/}
 
     </div>
   );

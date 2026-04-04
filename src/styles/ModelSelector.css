@@ -8,7 +8,7 @@
   inset: 0;
   z-index: 100;
 
-  background: linear-gradient(to bottom, #a7033f, #020611);
+  background: linear-gradient(to bottom, #a7033f,#0b041f, #020611);
   background-size: 100% 100%;
   
   pointer-events: none;
@@ -19,21 +19,75 @@
   position: absolute;
   inset: 0;
 
-  background-image:
-  /*LineasRetro*/
-  repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.03) 0px,
-    rgba(255,255,255,0.03) 1px,
-    transparent 2px,
-    transparent 4px);
+  /* GRID */
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(0,255,255,0.2) 0px,
+      rgba(0,255,255,0.2) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,255,255,0.2) 0px,
+      rgba(0,255,255,0.2) 1px,
+      transparent 1px,
+      transparent 40px
+    );
 
-    /*Cuadricula
-    linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+  /* PERSPECTIVA */
+  transform: perspective(600px) rotateX(110deg);
+  transform-origin: center;
 
-  background-size: 60px 60px;*/
+  /* DESVANECER HACIA EL FONDO */
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+
+  pointer-events: none;
+
+  animation: gridMove 10s linear infinite;
 }
+.selector-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+
+  /* 🔹 CAPAS */
+  background:
+    /* ruido fino */
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+
+    /* scanlines */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0,0,0,0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+
+    /* tintado cyber */
+    linear-gradient(
+      rgba(0, 50, 100, 0.15),
+      rgba(0, 0, 0, 0.3)
+    );
+
+  mix-blend-mode: overlay;
+
+  animation: noiseMove 0.2s infinite linear;
+}
+
+
+
 
 /* CONTENEDOR */
 .hallway {
@@ -56,15 +110,16 @@
   cursor: pointer;
 
   width: 30%;
-  height: 30%;
+  height: 35%;
 
   will-change: transform;
 
   background: rgba(0, 255, 255, 0.05);
  backdrop-filter: blur(10px);
  border: 1px solid rgba(0,255,255,0.15);
-   animation: drift 4s ease-in-out infinite;
+  /* animation: drift 4s ease-in-out infinite;*/
 }
+
 
 @keyframes drift {
   0% { transform: translateY(0) }
@@ -74,25 +129,25 @@
 
 .window-0 {
   left: 17%;
-  top: 60%;
+  top: 65%;
   pointer-events: auto;
 
 }
 
 .window-1 {
-  left: 0%;
+  left: 3%;
   top: 20%;
   pointer-events: auto;
 }
 
 .window-2 {
   right: 17%;
-  top: 60%;
+  top: 65%;
   pointer-events: auto;
 }
 
 .window-3 {
-  right: 0;
+  right: 3%;
   top: 20%;
   pointer-events: auto;
 }
@@ -100,7 +155,31 @@
 .window-glass {
   width: 100%;
   height: 100%;
+  overflow: hidden; /* importante */
+  display: flex;
+ 
 
   color: white;
+}
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+
+  pointer-events: none;
+}
+.window:hover {
+  transform: scale(1.05);
+  border: 1px solid rgba(0,255,255,0.6);
+  
+}
+.window-glass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 esto hace que quede como preview */
+ 
+
 }
 
