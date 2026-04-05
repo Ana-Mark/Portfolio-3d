@@ -27,18 +27,24 @@
 }
 
 
+
+
+
+
 /* 3D MODEL CONTAINER*/
 .canvas-container {
   position: relative;
   
   width: 70%;
-  height: 90%;
+  height: 85%;
   
-  right: 10%;
+  margin-right: 25%;
+  top: 3%;
   z-index: 0;
 
    background-color: #0e0e1d;
-
+   border: 3px solid rgba(0, 255, 255, 0.15);
+   border-radius: 5px;
 
 
 
@@ -53,15 +59,15 @@
   background:
     repeating-linear-gradient(
       to right,
-      rgba(0,255,255,0.2) 0px,
-      rgba(0,255,255,0.2) 1px,
+      rgba(0,255,255,0.15) 0px,
+      rgba(0,255,255,0.15) 1px,
       transparent 1px,
       transparent 40px
     ),
     repeating-linear-gradient(
       to bottom,
-      rgba(0,255,255,0.2) 0px,
-      rgba(0,255,255,0.2) 1px,
+      rgba(0,255,255,0.15) 0px,
+      rgba(0,255,255,0.15) 1px,
       transparent 1px,
       transparent 40px
     );
@@ -71,12 +77,15 @@
   transform-origin: center;
 
   /* DESVANECER HACIA EL FONDO */
-  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient( rgba(0,0,0,0),rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0));
 
   pointer-events: none;
 
 
 }
+
+
+
 
 
 
@@ -90,7 +99,7 @@
   width: 10%;
   height: 5%;
 
-  background-color: rgba(0, 255, 255, 0);
+  background-color: rgba(255, 0, 0, 0);
 
   inset: 0;
   pointer-events: auto;
@@ -102,17 +111,19 @@
 .ui-models {
   position: absolute;
 
-  height: 90%;
+  height: 86%;
   width: 95%;
 
-  right: 0%;
+  right: 3%;
+  top: 10%;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+ 
+
 
   pointer-events: none;
-
+ background-color: rgba(255, 0, 0, 0);
   
 }
 
@@ -120,11 +131,12 @@
 .right-ui{
   position: absolute;
   
-  height: 100%;
+  height: 95%;
   width: 24%;
 
-  right: 1%;
- background-color: rgba(255, 0, 0, 0);
+  right: 0%;
+  margin-top: 1%;
+ background-color: rgba(0, 17, 255, 0);
   
 pointer-events: auto;
 }
@@ -133,10 +145,11 @@ pointer-events: auto;
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   height: 50%;
-  top: 10%;
+  margin-top: 23%;
   background-color: rgba(0, 255, 255, 0);
+  
 }
 .icon-tabs button{
 
@@ -147,49 +160,76 @@ pointer-events: auto;
 
 }
 
-/*Titulo Descripcion */
+
+/*Titulo Descripcion 
 .content{
   position: absolute;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
 
  color: aliceblue;
   width: 100%;
   height: 20%;
 
-  margin-left: 60px;
+  margin-left: 0px;
+  pointer-events: none;
   
-  background-color: rgba(38, 0, 255, 0);
-}
+  background-color: rgba(38, 0, 255, 0.836);
+}*/
 .model-title{
-font-size: 25px;
+  
+ background-color: rgba(0, 255, 255, 0);
+ color: aliceblue;
+ width: 30%;
+ height: 10%;
+
+
+  margin-top: 0%;
+  margin-left: 77%;
+ font-size: 30px;
 
 }
 .model-description{
+position: absolute;
+color: aliceblue;
+ font-size: 17px;
+ width: 30%;
 
-font-size: 20px;
+  margin-top: 7%;
+  margin-left: 79%;
 
 
 
 }
 
 
-.content-software{
-  position: absolute;
- display: flex;
-  height: 15%;
-  width: 90%;
-  bottom: 35%;
-  background-color: rgba(46, 221, 11, 0.329);
+.software-inline  {
+  display: flex; 
+
+  height: 24%;
+  width: 24%;
+  
+  gap: 10px;
+ margin-left: 76%;
+ margin-top: 20%;
+
+  background-color: rgba(46, 221, 11, 0);
+   border: 3px solid rgba(0, 255, 255, 0);
+ 
 }
 .software-inline img {
+
+
+  width: 35%;
+  height: 35%;
+
  
-  width: 30px;
-  height: 30px;
  
 }
+
+
 
 
 /*============UI - UV LAYOUT=================*/
@@ -209,24 +249,8 @@ font-size: 20px;
  
  pointer-events: auto;
 }
-.content-uv {
- position: absolute;
 
- display: flex;
-  flex-direction: column;
 
- gap: 8%;
-
- height: 100%;
- width: 20.8%;
-
-bottom: 238%;
-right: 0.9%;
- 
-color: rgb(255, 255, 255);
- 
- pointer-events: none;
-}
 
 
 /* CONTENEDOR IMG*/

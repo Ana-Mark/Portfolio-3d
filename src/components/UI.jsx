@@ -3,6 +3,7 @@ import ModelUI from "./ModelUI.jsx";
 import UVGallery from "./UVGallery.jsx"
 import MaterialGallery from "./MaterialGallery.jsx"
 import ModelDescription from "./Descriptions.jsx"
+import ModelSoftware from "./ModelSoftware.jsx"
 
 
 // INTERFAZ VIEWER//
@@ -24,6 +25,10 @@ function UI({
 
    return (
      <div className="ui-models">
+
+      <ModelDescription activeModel={activeModel} />
+      <ModelSoftware activeModel={activeModel} />
+      
        
        <ModelUI
          activeModel={activeModel}
@@ -38,9 +43,7 @@ function UI({
       setActiveMaps={setActiveMaps}
       activeModel={activeModel}
     />
-    <div className="content-uv">
-    <ModelDescription activeModel={activeModel} />
-    </div>
+
   </div>
   
 )}

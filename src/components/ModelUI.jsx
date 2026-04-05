@@ -34,26 +34,6 @@ function ModelUI({
           ))}
        </div>
 
-       
-
-       {/* CONTENIDO */}
-       <div className="content">
-         {activeSection === "description" && (
-           <>
-           <ModelDescription activeModel={activeModel} />
-           </>
-          )}
-       </div>
-
-         <div className="content-software">
-         {activeSection === "description" && (
-           <>
-           <ModelSoftware activeModel={activeModel} />
-           </>
-          )}
-       </div>
-       
-
 
 
      </div>

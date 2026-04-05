@@ -109,8 +109,8 @@
   position: absolute;
   cursor: pointer;
 
-  width: 30%;
-  height: 35%;
+  width: 35%;
+  height: 40%;
 
   will-change: transform;
 
@@ -128,27 +128,27 @@
 }
 
 .window-0 {
-  left: 17%;
-  top: 65%;
+  left: 10%;
+  top: 60%;
   pointer-events: auto;
 
 }
 
 .window-1 {
-  left: 3%;
-  top: 20%;
+  left: 0%;
+  top: 12%;
   pointer-events: auto;
 }
 
 .window-2 {
-  right: 17%;
-  top: 65%;
+  right: 10%;
+  top: 60%;
   pointer-events: auto;
 }
 
 .window-3 {
-  right: 3%;
-  top: 20%;
+  right: 0%;
+  top: 12%;
   pointer-events: auto;
 }
 
@@ -167,12 +167,13 @@
 
   background: rgba(0, 255, 255, 0.05);
   backdrop-filter: blur(2px);
+  
 
   pointer-events: none;
 }
 .window:hover {
   transform: scale(1.05);
-  border: 1px solid rgba(0,255,255,0.6);
+  border: 2px solid rgba(0,255,255,0.6);
   
 }
 .window-glass img {
