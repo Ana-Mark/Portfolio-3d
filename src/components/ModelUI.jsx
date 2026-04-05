@@ -2,7 +2,15 @@
 import ModelDescription from "./Descriptions.jsx"
 import ModelSoftware from "./ModelSoftware.jsx"
 import { MODELS } from "../data/modelsData"
+import { FileText, TextAlignJustify, Palette, Image, LayersPlus, Clapperboard} from "lucide-react"
 
+const icons = {
+  description: <TextAlignJustify size={20} color="white" />,
+  uv: <Palette size={20} color="white" />,
+  assets: <LayersPlus size={20} color="white" />,
+  video: <Clapperboard size={20} color="white" />,
+  render: <Image size={20} color="white" />
+}
 
 function ModelUI({
   activeModel,
@@ -27,7 +35,7 @@ function ModelUI({
              className={activeSection === section ? "active" : ""}
              onClick={() => setActiveSection(section)}
             >
-            {section}
+            {icons[section]}
           </button>
           
 

@@ -154,9 +154,10 @@ pointer-events: auto;
 .icon-tabs button{
 
 
- width: 50%;
- height: 10%;
-
+ width: 40px;
+ height: 40px;
+  background: rgba(0,255,255,0.1);
+  border: 1px solid rgba(0,255,255,0.3);
 
 }
 
@@ -182,13 +183,15 @@ pointer-events: auto;
   
  background-color: rgba(0, 255, 255, 0);
  color: aliceblue;
+ background-color: rgba(0, 255, 255, 0);
  width: 30%;
- height: 10%;
+ max-height: 10%;
 
 
   margin-top: 0%;
   margin-left: 77%;
- font-size: 30px;
+ font-size: 27px;
+  pointer-events: none;
 
 }
 .model-description{
@@ -200,7 +203,7 @@ color: aliceblue;
   margin-top: 7%;
   margin-left: 79%;
 
-
+ pointer-events: none;
 
 }
 
@@ -236,16 +239,18 @@ color: aliceblue;
 
 /*CONTENEDOR*/
 .bottom-textures {
- position: absolute;
- display: flex;
- align-items: stretch;
+  position: absolute;
+  display: flex;
 
- height: 30%;
- width: 100%;
+    justify-content: right; /* 🔥 centra el zippo */
+    
+  height: 30%;   /* 🔥 usa height, no max-height */
+  width: 100%;
+  bottom: 0;
 
- bottom: 0%;
+  overflow: hidden;
  
- border: 2px solid rgba(244, 248, 14, 0.877);
+ border: 2px solid rgb(244, 248, 14);
  
  pointer-events: auto;
 }
@@ -255,55 +260,68 @@ color: aliceblue;
 
 /* CONTENEDOR IMG*/
 .uv-sets-grid {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, auto);
+  
+  width: fit-content;
+  max-width: 100%;
 
-  height: 100%;
-  width: 100%;
- 
   gap: 10px;
   padding: 10px;
 
-  overflow-x: auto;       /* scroll horizontal */
+  overflow-y: auto;  /* 🔥 vertical, no horizontal */
 
   pointer-events: auto;
 
-  background-color: rgba(10, 10, 71, 0.226);
+  background-color: rgba(245, 10, 10, 0.178);
 }
 
 
-/* DISPLAY SET*/
+/* BUTTONS*/
 .uv-set-column{
-  min-width: 120px;       /* tamaño fijo bonito */
-  height: 100%;
-
- border: 2px solid rgba(244,248,14,0.4);
-  background-color: rgba(0, 255, 255, 0.199);
-
   display: flex;
   flex-direction: column;
+
+ border: 3px solid rgba(0,255,255,0.3);
+ background-color: rgb(255, 0, 0);
+ 
+
+ 
+}
+.uv-set-column button{
+  position: absolute;
+  height: 30px;
+  width: 80px;
+ color: aliceblue;
+    background: rgba(8, 73, 73, 0.877);
+  border: 1px solid rgba(0,255,255,0.3);
 }
 /* DISPLAY IMG*/
 .uv-maps-column{
-  display: flex;
-  flex-direction: row;
+  display: flex;            /* 🔥 cambia grid por flex */
+  flex-wrap: wrap;          /* 🔥 permite saltos de línea */
+  gap: 10px;
+   
 
-  gap: 20px;
+ 
 
-  overflow-y: auto;       /* 🔥 SCROLL vertical */
-  padding: 5px;
-  background-color: aqua;
+  
 
-  flex: 1;                /* ocupa todo el alto restante */
+  background-color: rgb(0, 255, 255);
+
+       
 }
 /* IMG*/
 .uv-maps-column img {
-  width: 40%;
+  width: 189px;        /* 🔥 tamaño fijo */
   height: auto;
+
+  object-fit: contain; /* 🔥 ESTO ES LA CLAVE */
 
   border: 2px solid transparent;
   cursor: pointer;
 
-  object-fit: cover;
 }
 
 
@@ -321,34 +339,47 @@ color: aliceblue;
     justify-content: center;
     align-items: center;
 
-  width: 74%;
+
+
+  width: 75%;
   height: 100%;
 
   left: 0;
  pointer-events: auto;
  
-background-color: rgba(0, 255, 255, 0.486);
+  background: rgb(6, 46, 46);
+  border: 1px solid rgba(0,255,255,0.3);
 
 }
 
 .assets-buttons {
  position: absolute;
+ display: flex;
+ 
+ top: 23%;
+ right: -25%;
+}
+.assets-buttons  button{
+  height: 35px;
+  width: 130px;
+  background: rgba(0, 255, 255, 0.534);
+  border: 1px solid rgba(0, 255, 255, 0.76);
 
- right: -20%;
 }
 
 .assets-view {
   position: absolute;
-  width: 95%;
-  height: 87%;
- gap: 1%;
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+  gap: 5%;
   display: flex;
   
   overflow-x: auto;
   flex-direction: column;
 
  
-  background-color: rgba(255, 228, 196, 0.308);
+  background-color: rgba(255, 228, 196, 0);
 }
 
 .assets-view img {
@@ -362,6 +393,8 @@ background-color: rgba(0, 255, 255, 0.486);
 /* 🔥 SOLO MODULAR */
 .modular-ui {
   flex-direction: column;
+  max-height: 22%;
+  
   
 
   background-color: rgba(255, 196, 245, 0.295);
@@ -369,92 +402,128 @@ background-color: rgba(0, 255, 255, 0.486);
 
 
 /* MATERIAL GALLERY distinta */
+/* BOTONES */
 .uv-modes {
-  position: relative;
-
-  height: 50%;
-  width: 10%;
-  bottom: 180%;
-  left: 80%;
+  position: fixed;
+  display: flex;
+  
+  bottom: 60%;
+  left: 78%;
  
   pointer-events: auto;
 
   background-color: rgba(8, 8, 240, 0);
 
 }
-.material-grid {
-  display: flex;
-  gap: 0.5%;
- 
-  height: 100%;
+.uv-modes button {
+   height: 35px;
+  width: 130px;
+  background: rgba(0, 255, 255, 0.534);
+  border: 1px solid rgba(0, 255, 255, 0.76);
+  color: aliceblue;
 
-  background-color: rgb(128, 255, 0);
+}
+
+
+
+
+.material-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, auto);
+  
+  width: fit-content;
+  max-width: 100%;
+
+  gap: 10px;
+  padding: 10px;
+
+  overflow-y: auto;  /* 🔥 vertical, no horizontal */
+
+  pointer-events: auto;
+
+  background-color: rgba(245, 10, 10, 0.178);
 
 }
 
 .material-column {
-  
-  display: flex;
+ display: flex;
   flex-direction: column;
 
+ border: 3px solid rgba(0,255,255,0.3);
+ background-color: rgb(255, 0, 0);
+}
+
+.material-column button {
+  position: absolute;
+  height: 30px;
+  width: 80px;
+ color: aliceblue;
+    background: rgba(8, 73, 73, 0.877);
+  border: 1px solid rgba(0,255,255,0.3);
 }
 
 .modular-ui .uv-maps-column{
-  display: flex;
-  flex-direction: row;
+   display: flex;            /* 🔥 cambia grid por flex */
+  flex-wrap: wrap;          /* 🔥 permite saltos de línea */
+  gap: 2px;
+   
 
-  gap: 8px;
+ 
 
-  overflow-y: auto;       /* 🔥 SCROLL vertical */
-  padding: 10px;
-  background-color: rgb(255, 196, 0);
+  
 
-  flex: 1;  
+  background-color: rgb(0, 255, 255);
+
+      
 }
 
 .material-column img {
-  width: 40%;
+  width: 142px;        /* 🔥 tamaño fijo */
   height: auto;
+
+  object-fit: contain; /* 🔥 ESTO ES LA CLAVE */
 
   border: 2px solid transparent;
   cursor: pointer;
 
-  object-fit: cover;
 }
 
 .modular-ui .assets-canvas{
-  position: absolute;
+  position: fixed;
   display: flex;
     justify-content: center;
     align-items: center;
 
-  width: 74%;
-  height: 340%;
 
-  left: 0;
-  bottom: 0;
- pointer-events: none;
+
+  width: 71%;
+  height: 86%;
+bottom: 4%;
+  left: 2%;
+ pointer-events: auto;
  
-background-color: rgba(255, 51, 0, 0);
+  background: rgb(6, 46, 46);
+  border: 1px solid rgba(0,255,255,0.3);
 
 }
 .modular-ui .assets-view {
   position: absolute;
-  width: 95%;
-  height: 87%;
- gap: 1%;
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+  gap: 5%;
   display: flex;
   
   overflow-x: auto;
   flex-direction: column;
 
  
-  background-color: rgba(255, 228, 196, 0.308);
+  background-color: rgba(255, 228, 196, 0);
 }
 
 .modular-ui .assets-view img {
   height: 100%;
-
   object-fit: contain;
 
 
