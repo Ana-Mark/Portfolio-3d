@@ -12,15 +12,7 @@ import Presentation from "./screens/Presentation.jsx";
 import MainMenu from "./screens/MainMenu.jsx";
 import About from "./screens/About.jsx";
 
-function CanvasLayer() {
-  return (
-    <div id="canvas-wrapper">
-      <Canvas>
-        {/* escena */}
-      </Canvas>
-    </div>
-  )
-}
+
 
 function App() {
   const [screen, setScreen] = useState("presentation");

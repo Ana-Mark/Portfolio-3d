@@ -7,11 +7,11 @@ import { useEffect } from "react"
 import * as THREE from "three"
 import { useMemo } from "react"
 
-
+/*
 useGLTF.preload("/models/Weapon_Portfolio_04.glb");
 useGLTF.preload("/models/Zippo_Portfolio_01.glb");
 useGLTF.preload("/models/VendingMachine.glb");
-useGLTF.preload("/models/Calendar.glb");
+useGLTF.preload("/models/Calendar.glb");*/
 
 
 //ANIMACION MODELO FLOTANDO
@@ -107,8 +107,7 @@ const MODEL_TEXTURES = [
 ]
 //RUTA ASSETS MODULAR
 const MODULAR_ASSETS = [
- {type:"model", path:"/models/VendingMachine.glb"},
- { type:"tileable", path:"/models/Tile_Texture_Mesh.glb" }
+ {type:"model", path:"/models/VendingMachine.glb"}
  
 ]
 
@@ -442,7 +441,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
 
 //PATH MODELO Y QUE HACE
-function Models({ activeModel, animationOn, activeMaps, uvMode,  }) {
+function Models({ activeModel, animationOn, activeMaps,   }) {
 
 
   if (activeModel === null) return null
@@ -472,16 +471,7 @@ function Models({ activeModel, animationOn, activeMaps, uvMode,  }) {
 
     case 2:
       return (
-        <>
-          {uvMode === "tileable" ? (
-            <Model
-              path="/models/Tile_Texture_Mesh.glb"
-              visible={true}
-              animationOn={false}
-              activeMaps={activeMaps}
-              modelIndex={3}
-            />
-          ) : (
+        
             <Model
               path="/models/VendingMachine.glb"
               visible={true}
@@ -489,8 +479,7 @@ function Models({ activeModel, animationOn, activeMaps, uvMode,  }) {
               activeMaps={activeMaps}
               modelIndex={2}
             />
-          )}
-        </>
+        
       )
 
     case 3:

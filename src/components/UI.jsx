@@ -4,6 +4,7 @@ import UVGallery from "./UVGallery.jsx"
 import MaterialGallery from "./MaterialGallery.jsx"
 import ModelDescription from "./Descriptions.jsx"
 
+
 // INTERFAZ VIEWER//
 function UI({
   activeModel,

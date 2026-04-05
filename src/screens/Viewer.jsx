@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense, useState, useRef } from "react";
-import { Html } from "@react-three/drei";
+import { Html } from "@react-three/drei"
 import Scene from "../components/ThreeScene.jsx";
 import UI from "../components/UI.jsx";
 import RenderOverlay from "../screens/RenderOverlay.jsx";
@@ -28,7 +28,12 @@ export default function Viewer({ setScreen, selectedModel }) {
 
   const controlsRef = useRef();
 
+
+
   
+
+const [isLoading, setIsLoading] = useState(true)
+
 
 const CAMERA_CONFIG = [
   {
@@ -109,6 +114,18 @@ useEffect(() => {
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [activeModel])
 
+useEffect(() => {
+  triggerLoading()
+}, [activeModel])
+
+useEffect(() => {
+  if (activeModel !== 2) return
+
+  if (activeSection === "uv") {
+    triggerLoading()
+  }
+}, [activeSection, activeModel])
+
 
 
 
@@ -141,6 +158,17 @@ useEffect(() => {
 
 
 
+const triggerLoading = () => {
+  setIsLoading(true)
+
+  setTimeout(() => {
+    setIsLoading(false)
+  }, 700)
+}
+
+
+
+
 
   return (
     
@@ -151,7 +179,12 @@ useEffect(() => {
       {/*3D MODEL CONTAINER */}
       <div className="canvas-container">
         
-       
+{isLoading && (
+  <div className="global-loader">
+    <div className="spinner"></div>
+    Loading...
+  </div>
+)}
 
        <Canvas
          camera={{ near: 0.01, far: 1000 }}
@@ -173,22 +206,37 @@ onCreated={({ camera }) => {
           <ambientLight intensity={0.3} />
           <directionalLight position={[3, 5, -2]} intensity={2} />
 
-          <Suspense fallback={
-           <Html center>
-             <div className="loader">Loading 3D...</div>
-            </Html>
-          }></Suspense>
 
-          <Suspense fallback={null}>
-            <Scene
-              activeModel={activeModel}
-              activeSection={activeSection}
-              //animationOn={animationOn}
-              activeMaps={activeMaps}
-              activeAsset={activeAsset}
-              uvMode={uvMode}
-            />
-          </Suspense>
+
+
+
+
+
+
+
+
+
+
+<Suspense fallback={null}>
+  <Scene
+    key={`${activeModel}-${activeSection}`}
+    
+    activeModel={activeModel}
+    activeSection={activeSection}
+    activeMaps={activeMaps}
+    activeAsset={activeAsset}
+    uvMode={uvMode}
+  />
+</Suspense>
+
+
+
+
+
+
+
+
+
 
           <OrbitControls
   ref={controlsRef}
@@ -209,7 +257,9 @@ onCreated={({ camera }) => {
       <RenderOverlay
        activeModel={activeModel}
        isVisible={activeSection === "render"}
-       onClose={() => setActiveSection("description")}
+       onClose={() =>
+         setActiveSection(activeModel === 2 ? "assets" : "description")
+        }
        setScreen={setScreen}
       />
 
@@ -240,15 +290,7 @@ onCreated={({ camera }) => {
       
 
 
-      {/* ================= BOTONES EXTRA ================= 
-      <div className="ui-menu">
 
-        <button onClick={() => setScreen("selector")}>
-          Volver
-        </button>
-
-       
-      </div>*/}
 
     </div>
   );
