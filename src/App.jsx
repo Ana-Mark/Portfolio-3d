@@ -12,6 +12,16 @@ import Presentation from "./screens/Presentation.jsx";
 import MainMenu from "./screens/MainMenu.jsx";
 import About from "./screens/About.jsx";
 
+function CanvasLayer() {
+  return (
+    <div id="canvas-wrapper">
+      <Canvas>
+        {/* escena */}
+      </Canvas>
+    </div>
+  )
+}
+
 function App() {
   const [screen, setScreen] = useState("presentation");
   const [selectedModel, setSelectedModel] = useState(0);
@@ -27,13 +37,17 @@ function App() {
       {screen === "viewer" && (
        <Viewer setScreen={setScreen} selectedModel={selectedModel} />
       )}
-      {screen === "render" && <RenderOverlay setScreen={setScreen} />}
+      {screen === "render" && <RenderOverlay setScreen={setScreen} 
+      
+      />}
 
       {screen === "presentation" && <Presentation setScreen={setScreen} />}
 
             {screen === "about" && (
         <About setScreen={setScreen} /> 
       )}
+
+
   
 
 
