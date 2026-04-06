@@ -136,7 +136,22 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
    return MODEL_TEXTURES[modelIndex]?.textures || []
   }, [modelIndex])
 
-  const textures = useTexture(texturePaths)
+
+  const textures = useTexture(texturePaths, (loaded) => {
+  loaded.forEach((tex, index) => {
+    if (!tex) return
+
+    tex.flipY = false
+
+    if (texturePaths[index].includes("BaseColor")) {
+      tex.colorSpace = THREE.SRGBColorSpace
+    } else {
+      tex.colorSpace = THREE.LinearSRGBColorSpace
+    }
+
+    tex.needsUpdate = true
+  })
+})
 
   
 
@@ -151,23 +166,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
 
 
-  useEffect(() => {
-   textures.forEach((tex, index) => {
-     if (!tex) return
-       tex.flipY = false
-
-     // Si es BaseColor
-     if (texturePaths[index].includes("BaseColor")) {
-       tex.colorSpace = THREE.SRGBColorSpace
-      } 
-      else {
-       tex.colorSpace = THREE.LinearSRGBColorSpace
-      }
-
-     tex.needsUpdate = true
-    })
-
-  }, [textures, texturePaths])
+ 
 
   const textureMap = {}
 
@@ -304,9 +303,8 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
   //Texturas en Modelo
   useEffect(() => {
-   if (!gltf || !activeMaps) 
-
-   return
+   if (!gltf) return
+   if (!activeMaps && !path.includes("Tile_Texture_Mesh")) return
 
    const isTileable = path.includes("Tile_Texture_Mesh")
 

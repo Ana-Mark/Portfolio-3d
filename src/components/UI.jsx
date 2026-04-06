@@ -52,36 +52,37 @@ function UI({
   <div className="bottom-textures modular-ui">
     
     <div className="uv-modes">
-      <button onClick={() => {
-        setActiveAsset("heroUV")
-        setUvMode("unique")
-      }}>
+<button onClick={() => {
+  setActiveAsset("heroUV")
+  setUvMode("unique")
+}}>
         Hero UV
       </button>
 
-      <button onClick={() => {
-        setActiveAsset("tileable")
-        setUvMode("tileable")
-      }}>
+<button onClick={() => {
+  setActiveAsset("tileable")
+  setUvMode("tileable")
+}}>
         Tileable
       </button>
     </div>
 
-    {activeAsset === "heroUV" && (
-      <MaterialGallery
-        activeMaps={activeMaps}
-        setActiveMaps={setActiveMaps}
-      />
-    )}
- <div className="assets-canvas">
-    {activeAsset === "tileable" && (
-      <div className="assets-view">
-        <img src="/Textures/Renders/TileableTextures_01.jpg" />
-
-      </div>
-    
-    )}
+{activeAsset === "heroUV" && (
+  <div className="assets-vm-canvas">
+    <MaterialGallery
+      activeMaps={activeMaps}
+      setActiveMaps={setActiveMaps}
+    />
   </div>
+)}
+
+{activeAsset === "tileable" && (
+  <div className="assets-canvas">
+    <div className="assets-view">
+      <img src="/Textures/Renders/TileableTextures_01.jpg" />
+    </div>
+  </div>
+)}
   </div>
 )}
         
