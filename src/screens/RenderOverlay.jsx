@@ -1,6 +1,6 @@
 import "../styles/RenderOverlay.css";
 
-export default function RenderOverlay({ activeModel, isVisible, onClose, setScreen }) {
+export default function RenderOverlay({ activeModel, isVisible, onClose }) {
 
     const RENDERS = [
     [
@@ -29,9 +29,7 @@ export default function RenderOverlay({ activeModel, isVisible, onClose, setScre
     <div className="render-overlay">
 
 
-      <button onClick={() => setScreen("viewer")}>
-        Volver
-      </button>
+
 
       <button className="close-btn" onClick={onClose}>
         ✕

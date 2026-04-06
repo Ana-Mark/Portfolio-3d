@@ -268,7 +268,7 @@ onCreated={({ camera }) => {
        activeModel={activeModel}
        isVisible={activeSection === "video"}
        MODELS={MODELS}
-       onClose={() => setActiveSection("assets")}
+       onClose={() => setActiveSection("assets") || setActiveAsset("hero")}
        
       />
 
