@@ -17,9 +17,9 @@ export default function MainMenu({ setScreen }) {
       </button>
 
       <button onClick={() => {
-        window.open("https://drive.google.com/tu-pdf", "_blank");
+        window.open("https://drive.google.com/file/d/1cx2UniLnJx46el4cFgHjW_2b252S1cLv/view?usp=sharing", "_blank");
       }}>
-        Problems?
+        Portfolio PDF
       </button>
 
     </div>

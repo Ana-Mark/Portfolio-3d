@@ -52,19 +52,25 @@ function UI({
   <div className="bottom-textures modular-ui">
     
     <div className="uv-modes">
-<button onClick={() => {
-  setActiveAsset("heroUV")
-  setUvMode("unique")
-}}>
-        Hero UV
-      </button>
+<button
+  className={activeAsset === "heroUV" ? "active" : ""}
+  onClick={() => {
+    setActiveAsset("heroUV")
+    setUvMode("unique")
+  }}
+>
+  Hero UV
+</button>
 
-<button onClick={() => {
-  setActiveAsset("tileable")
-  setUvMode("tileable")
-}}>
-        Tileable
-      </button>
+<button
+  className={activeAsset === "tileable" ? "active" : ""}
+  onClick={() => {
+    setActiveAsset("tileable")
+    setUvMode("tileable")
+  }}
+>
+  Tileable
+</button>
     </div>
 
 {activeAsset === "heroUV" && (
@@ -92,13 +98,19 @@ function UI({
 
            {/* BOTONES */}
             <div className="assets-buttons">
-             <button onClick={() => setActiveAsset("hero")}>
-                Hero Asset
-              </button>
+<button
+  className={activeAsset === "hero" ? "active" : ""}
+  onClick={() => setActiveAsset("hero")}
+>
+  Hero Asset
+</button>
 
-             <button onClick={() => setActiveAsset("modular")}>
-               Modular Assets
-             </button>
+<button
+  className={activeAsset === "modular" ? "active" : ""}
+  onClick={() => setActiveAsset("modular")}
+>
+  Modular Assets
+</button>
            </div>
 
            {/* CONTENIDO */}

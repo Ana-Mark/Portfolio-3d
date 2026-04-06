@@ -56,9 +56,15 @@ video {
 /* botón cerrar */
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  width: 5%;
+  height: 5%;
+  top: 4%;
+  right: 5%;
 
+  background: rgba(8, 73, 73, 0.877);
+  border: 3px solid rgba(0, 255, 255, 0.568);
+
+  color: aliceblue;
   z-index: 1000;
 }
 

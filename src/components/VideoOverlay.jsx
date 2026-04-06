@@ -10,7 +10,7 @@ function VideoOverlay({ activeModel, isVisible, MODELS, onClose }) {
     <div className="render-overlay">
       
       <button className="close-btn" onClick={onClose}>
-        Volver
+        X
       </button>
 
       <div className="render-scroll">

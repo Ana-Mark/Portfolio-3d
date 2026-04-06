@@ -28,6 +28,14 @@ function ModelDescription({ activeModel }) {
       <div className="model-description">
       <p>{model.description}</p>
       </div>
+
+<div className="links">
+  {model.links?.map((link) => (
+    <a key={link.url} href={link.url} target="_blank">
+      {link.label}
+    </a>
+  ))}
+</div>
     </>
   )
 }

@@ -18,7 +18,18 @@ export const MODELS = [
     path: "/models/Weapon_Portfolio_04.glb",
 
     // Texto descriptivo
-    description: "3D Hard Surface Asset.",
+    description: `3D Hard Surface Asset, recreation of the weapon M-240B.
+    
+    Focused on clean topology and optimization of multiples UV Sets.
+    
+    Combination and use of Blender, Plasticity and Zbrush, for the modeling.`,
+
+     links: [
+    {
+      label: "View on ArtStation",
+      url: "https://tu-link.com"
+    }
+   ],
 
     // Software utilizado
     software: [
@@ -43,7 +54,16 @@ export const MODELS = [
     name: "Zippo Lighter",
     path: "/models/Zippo_Portfolio_01.glb",
 
-    description: "3D asset inspired by the classic Poker game.",
+    description: `3D asset inspired by the classic Poker game.
+    
+    Focused on clean topology and realistic metalic textures and damage`,
+
+    links: [
+    {
+      label: "View on ArtStation",
+      url: "https://tu-link.com"
+    }
+   ],
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },
@@ -60,10 +80,14 @@ export const MODELS = [
   // 🧱 MODELO 2 - MODULAR
   // ==============================
   {
-    name: "Modular Environment",
+    name: `Modular 
+    Environment`,
     path: "/models/VendingMachine.glb",
 
-    description: "Environment modular system.",
+    description: `Modular environment, based on the "Ho oh Club" - Cyberpunk.
+    Focused on the use of modular assets for an optimized environment.
+    
+    Use of Unreal engine, Substance Painter and Substance Designer for the textures and light `,
 
     // 👇 ahora el vídeo también vive aquí
     video: "/videos/Video_Modular - Trim.mp4",
@@ -82,10 +106,15 @@ export const MODELS = [
   // 🧪 MODELO 3 - EXTRA
   // ==============================
   {
-    name: "Work in progress",
+    name: "Perth",
     path: "/models/Calendar.glb",
 
-    description: "Additional portfolio piece.",
+    description: ` Work in progress.
+
+    I'm currently working on this piece.
+    Its a recreation of a hand made clock by the artist Eric Freitas.
+    
+    Focused on a realistic modeling of a clock mechanism, with all the pieces this includes`,
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },

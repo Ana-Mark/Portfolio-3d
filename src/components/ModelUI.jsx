@@ -32,7 +32,7 @@ function ModelUI({
 
            <button
              key={section}
-             className={activeSection === section ? "active" : ""}
+             className={`tab-btn ${activeSection === section ? "active" : ""}`}
              onClick={() => setActiveSection(section)}
             >
             {icons[section]}

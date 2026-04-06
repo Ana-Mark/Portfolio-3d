@@ -149,6 +149,7 @@ pointer-events: auto;
   height: 50%;
   margin-top: 23%;
   background-color: rgba(0, 255, 255, 0);
+   transition: all 0.2s ease;
   
 }
 .icon-tabs button{
@@ -160,6 +161,21 @@ pointer-events: auto;
   border: 1px solid rgba(0,255,255,0.3);
 
 }
+.icon-tabs button:hover{
+
+  background: rgba(0,255,255,0.4);
+
+}
+
+.tab-btn.active {
+  background: rgba(0,255,255,0.4);
+  box-shadow: 0 0 10px rgba(0,255,255,0.7);
+  transform: scale(1.1);
+}
+.tab-btn.active svg {
+  fill: black; /* o blanco según fondo */
+}
+
 
 
 /*Titulo Descripcion 
@@ -188,47 +204,61 @@ pointer-events: auto;
  max-height: 10%;
 
 
-  margin-top: 0%;
+  margin-top: -0.5%;
   margin-left: 77%;
- font-size: 27px;
+ font-size: 26px;
   pointer-events: none;
+   white-space: pre-line;
 
 }
+
 .model-description{
 position: absolute;
+
 color: aliceblue;
  font-size: 17px;
- width: 30%;
+
 
   margin-top: 7%;
-  margin-left: 79%;
+  margin-left: 80%;
 
  pointer-events: none;
+ white-space: pre-line;
 
+}
+
+.links a {
+  position: absolute;
+
+  margin-top: 15%;
+  margin-left: 76%;
+  color: rgb(16, 150, 155);
+  text-decoration: underline;
+  display: inline-block;
+  
 }
 
 
 .software-inline  {
-  display: flex; 
-
-  height: 24%;
-  width: 24%;
-  
+  position: absolute;
+  display: flex;
   gap: 10px;
- margin-left: 76%;
- margin-top: 20%;
-
-  background-color: rgba(46, 221, 11, 0);
-   border: 3px solid rgba(0, 255, 255, 0);
+  padding: 1%;
+margin-left: 76%;
+margin-top: 20%;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 255, 255, 0),
+      rgba(0,255,255,0.15),
+      rgba(0,255,255,0.15),
+      rgba(0, 255, 255, 0));
+  border: 2px solid rgba(0, 255, 255, 0);
  
 }
 .software-inline img {
-
-
-  width: 35%;
-  height: 35%;
-
- 
+  width: 15%;
+  height: 15%;
  
 }
 
@@ -360,8 +390,8 @@ color: aliceblue;
  position: absolute;
  display: flex;
  
- top: 23%;
- right: -25%;
+ top: 38%;
+ right: -28%;
 }
 .assets-buttons  button{
   height: 35px;
@@ -369,6 +399,22 @@ color: aliceblue;
   background: rgba(0, 255, 255, 0.534);
   border: 1px solid rgba(0, 255, 255, 0.76);
 
+}
+.assets-buttons button:hover{
+
+  background: rgba(0,255,255,0.4);
+
+}
+
+.assets-buttons.active {
+  background: rgba(0,255,255,0.4);
+  box-shadow: 0 0 10px rgba(0,255,255,0.7);
+  transform: scale(1.1);
+}
+.assets-buttons button.active,
+.uv-modes button.active {
+  background: rgba(0,255,255,0.8);
+  box-shadow: 0 0 10px rgba(0,255,255,0.7);
 }
 
 .assets-view {
@@ -411,8 +457,8 @@ color: aliceblue;
   position: fixed;
   display: flex;
   
-  bottom: 60%;
-  left: 78%;
+  top: 43%;
+  left: 79%;
  
   pointer-events: auto;
 
