@@ -281,15 +281,32 @@
 ========================= */
 
 @media (max-width: 768px) {
-  .about-container::before {
-    transform: perspective(600px) rotateX(70deg) scale(1.2);
+   .about-container {
+    grid-template-columns: 1fr; /* 🔥 UNA COLUMNA */
+    gap: 15px;
+
+    padding: 20px;
   }
+  .about-box {
+  min-width: 0; /* 🔥 evita overflow en grid */
+}
+    .about-box-Contact {
+    gap: 15px;
+  }
+  .about-box-me {
+  font-size: 14px;
+}
 
   .about-box-inside-skills {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 🔥 perfecto */
   }
 
   .about-box-knowledge {
-    flex-direction: column;
+    flex-direction: column; /* 🔥 ya lo tenías (bien) */
+    gap: 15px;
+  }
+    .software-icons img {
+    width: 50px;
+    height: 50px;
   }
 }

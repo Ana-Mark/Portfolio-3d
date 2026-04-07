@@ -32,7 +32,7 @@ function ModelDescription({ activeModel }) {
       </div>
 <div class="link-block">
   <div className="software-title">
-    <p>Programs used</p>
+    <p>Programs used:</p>
   </div>
 <div className="links">
   {model.links?.map((link) => (

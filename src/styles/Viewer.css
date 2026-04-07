@@ -461,7 +461,7 @@
   object-fit: contain;
 
   border: 2px solid transparent;
-  padding: 10px;
+  padding: 3px;
 
   cursor: pointer;
   transition: all 0.2s ease;
@@ -535,44 +535,209 @@ button {
 ========================= */
 @media (max-width: 768px) {
 
+    .canvas-container {
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 10%;
+
+    border: none;
+  }
+
   .app-container {
     grid-template-columns: 1fr;
     grid-template-rows: 55% 45%;
   }
 
-  .right-ui {
- 
-  width: 260px;
-  height: 10vh;
-  padding: 15px;
-  gap: 20px;
+   .right-ui {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
 
-  flex-direction: row;
-  overflow-x: auto;
-    
+    width: 100%;
+    height: 50px;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+    padding: 10px;
+
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
   }
 
   .icon-tabs {
     flex-direction: row;
+    justify-content: center;
     width: 100%;
   }
 
   .icon-tabs button {
-    aspect-ratio: 1 / 1;
-    width: 44px;
+    width: 50px;
+    height: 30px;
   }
 
-  .bottom-textures {
-    height: 40%;
+   .bottom-textures {
+    
+   display: flex;
+  justify-content: center; /* 🔥 centra todo */
+  align-items: flex-end;
+
+  width: 100%;
+  height: 40%;
+
+  padding: 10px;
+  gap: 10px; /* separación entre sets */
+  }
+  .uv-sets-grid {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 50%;
+  margin-bottom: 50px;
+ 
+  gap: 1px;
+  pointer-events: none;
+}
+
+.uv-set-column {
+  flex: 1; /* 🔥 reparte en 3 automáticamente */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+   overflow-y: auto;
+  
+  height: 80%;
+
+
+}
+.uv-set-column button {
+  flex: 1; /* 🔥 reparte en 3 automáticamente */
+
+  display: flex;
+  overflow-y: auto;
+ pointer-events: none;
+
+
+}
+
+.uv-maps-column {
+  display: flex;
+  overflow-y: auto;
+  
+ 
+}
+
+.uv-maps-column img {
+  max-width: 100%;
+  min-width: 10%;
+  height: 100%;
+  overflow-y: auto;
+  
+  
+          
+   
+
+ 
+}
+  .Assets-title-parent,
+  .Textures-title-parent {
+    display: none;
+  }
+  .text-block {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    align-items: center;
+
+    width: auto;
+    gap: 20px;
+
+    padding: 10px;
   }
 
-  .uv-sets-grid,
-  .material-grid {
-    grid-auto-columns: minmax(110px, auto);
-  }
-
-  .model-title,
   .model-description {
-    text-align: center;
+    margin-left: 0;
+  }
+
+  .link-block{
+  position: relative; 
+  
+  top: auto;
+  left: auto;
+
+  display: flex;
+   
+  
+  flex-direction: column; 
+  gap: 20px; 
+  }
+  .software-block {
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
+
+  margin-top: 20px; 
+   
+  }
+  .software-title{
+  position: fixed;
+  bottom: 29%;
+
+  }
+    .links{
+  position: fixed;
+  bottom: 29%;
+  right: 5%;
+  font-size: 12px;
+
+  }
+    .software-inline {
+     
+
+  
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 10px;
+  }
+    .assets-canvas {
+    position: fixed;
+    top: 29%;
+    left: 0;
+
+    width: 100%;
+    height: 38%;
+  }
+
+  .assets-buttons {
+    position: fixed;
+    top: 73%;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .assets-view {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .assets-view img {
+    min-height: auto;
+    height: auto;
   }
 }

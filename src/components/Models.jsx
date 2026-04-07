@@ -7,11 +7,7 @@ import { useEffect } from "react"
 import * as THREE from "three"
 import { useMemo } from "react"
 
-/*
-useGLTF.preload("/models/Weapon_Portfolio_04.glb");
-useGLTF.preload("/models/Zippo_Portfolio_01.glb");
-useGLTF.preload("/models/VendingMachine.glb");
-useGLTF.preload("/models/Calendar.glb");*/
+
 
 
 //ANIMACION MODELO FLOTANDO
@@ -74,42 +70,10 @@ const MODEL_TEXTURES = [
       "/Textures/Zippo/Zippo_AORM.png",
     ],
   },
-  {
-    // MODELO 2 - MODULAR (VENDING MACHINE)
-    textures: [
-      "/Textures/Modular/MI_BM_MetalicBlack_01_BaseColor.png",
-      "/Textures/Modular/MI_BM_MetalicBlack_01_Normal.png",
-      "/Textures/Modular/MI_BM_MetalicBlack_01_OcclusionRoughnessMetallic.png",
 
-      "/Textures/Modular/MI_BM_MetalicYellow_BaseColor.png",
-      "/Textures/Modular/MI_BM_MetalicYellow_Normal.png",
-      "/Textures/Modular/MI_BM_MetalicYellow_OcclusionRoughnessMetallic.png",
 
-      "/Textures/Modular/MI_BM_Turquoise_A_BaseColor.png",
-      "/Textures/Modular/MI_BM_Turquoise_A_Normal.png",
-      "/Textures/Modular/MI_BM_Turquoise_A_OcclusionRoughnessMetallic.png",
-
-      "/Textures/Modular/MI_BM_Turquoise_B_BaseColor.png",
-      "/Textures/Modular/MI_BM_Turquoise_B_Normal.png",
-      "/Textures/Modular/MI_BM_Turquoise_B_OcclusionRoughnessMetallic.png",
-
-    ],
-  },
-
-  {
-    textures: [
-      "/Textures/Modular/Metalic_Pattern_Floor_BaseColor.png",
-      "/Textures/Modular/Metalic_Pattern_Floor_Normal.png",
-      "/Textures/Modular/Metalic_Pattern_Floor_OcclusionRoughnessMetallic.png",
-
-    ],
-  }
 ]
-//RUTA ASSETS MODULAR
-const MODULAR_ASSETS = [
- {type:"model", path:"/models/VendingMachine.glb"}
- 
-]
+
 
 
 
