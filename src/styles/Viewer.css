@@ -79,7 +79,7 @@
   /* DESVANECER HACIA EL FONDO */
   mask-image: linear-gradient( rgba(0,0,0,0),rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0));
 
-  pointer-events: none;
+ 
 
 
 }
@@ -104,6 +104,7 @@
   inset: 0;
   pointer-events: auto;
   z-index: 0;
+  
 }
 
 
@@ -121,9 +122,10 @@
   flex-direction: column;
  
 
-
+z-index: 10;
   pointer-events: none;
  background-color: rgba(255, 0, 0, 0);
+  
   
 }
 
@@ -150,13 +152,14 @@ pointer-events: auto;
   margin-top: 23%;
   background-color: rgba(0, 255, 255, 0);
    transition: all 0.2s ease;
-  
+   pointer-events: auto;
 }
 .icon-tabs button{
 
-
- width: 40px;
- height: 40px;
+max-width: 200px;
+max-height: 200px;
+ width: 180%;
+ height: 11%;
   background: rgba(0,255,255,0.1);
   border: 1px solid rgba(0,255,255,0.3);
 
@@ -200,7 +203,8 @@ pointer-events: auto;
  background-color: rgba(0, 255, 255, 0);
  color: aliceblue;
  background-color: rgba(0, 255, 255, 0);
- width: 30%;
+ width: 25%;
+
  max-height: 10%;
 
 
@@ -209,6 +213,7 @@ pointer-events: auto;
  font-size: 26px;
   pointer-events: none;
    white-space: pre-line;
+  
 
 }
 
@@ -235,7 +240,8 @@ color: aliceblue;
   color: rgb(16, 150, 155);
   text-decoration: underline;
   display: inline-block;
-  
+  pointer-events: auto;
+  z-index: 999;
 }
 
 
@@ -254,11 +260,14 @@ margin-top: 20%;
       rgba(0,255,255,0.15),
       rgba(0, 255, 255, 0));
   border: 2px solid rgba(0, 255, 255, 0);
+  
  
 }
 .software-inline img {
-  width: 15%;
+  max-width: 15%;
+  width: 12%;
   height: 15%;
+  
  
 }
 
@@ -325,7 +334,7 @@ margin-top: 20%;
   position: absolute;
   height: 30px;
   width: 80px;
- color: aliceblue;
+ color: rgb(255, 240, 240);
     background: rgba(8, 73, 73, 0.877);
   border: 1px solid rgba(0,255,255,0.3);
 }
@@ -627,6 +636,156 @@ bottom: 4%;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  /* CONTENEDOR PRINCIPAL */
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* CANVAS 3D */
+  .canvas-container {
+    width: 100%;
+    height: 55%;
+    margin-right: 0;
+    top: 50px;
+  }
+
+  /* PANEL DERECHO → se convierte en abajo */
+  .right-ui {
+    position: relative;
+    width: 100%;
+    height: 45%;
+  }
+
+  /* BOTONES (icon-tabs) → horizontal */
+  .icon-tabs {
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    height: auto;
+    margin-top: -65px;
+    margin-right: 260px;
+  }
+
+  .icon-tabs button {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* TEXTOS → evitar que se salgan */
+  .model-title {
+    width: 90%;
+    max-width: 500px;
+    margin: 5px auto 0 auto;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .model-description {
+    position: relative;
+    margin: 0px auto;
+    width: 90%;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .links a {
+    position: relative;
+
+
+    margin: -10px auto;
+    display: block;
+    
+  }
+
+  .software-inline {
+    position: relative;
+    margin: 25px auto;
+    margin-right: 0px;
+    justify-content: center;
+  }
+  .software-inline img {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* UV / TEXTURES → que no revienten */
+  .bottom-textures {
+    margin-bottom: -20px;
+    max-height: 800px;
+    height: 26%;
+  }
+
+  .uv-sets-grid,
+  .material-grid {
+    grid-auto-columns: minmax(120px, auto);
+  }
+
+  .uv-maps-column img,
+  .material-column img {
+    width: 45px;
+  }
+
+  /* BOTONES UV */
+  .uv-modes {
+    position: relative;
+    top: 0px;
+    left: auto;
+   
+    margin: 0px 0;
+  }
+
+  /* ASSETS */
+  .assets-canvas {
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 210px;
+  }
+
+  .assets-buttons {
+    position: relative;
+    margin-top: 230px;
+    margin-right: 350px;
+
+    width: 80%;
+    height: 30%;
+   
+    
+  }
+  .modular-ui .assets-canvas{
+    width: 100%;
+    height: 38%;
+    left: 0;
+    top: 275px;
+
+}
+ 
+}
 
 
 

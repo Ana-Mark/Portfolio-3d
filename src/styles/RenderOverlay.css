@@ -56,9 +56,9 @@ video {
 /* botón cerrar */
 .close-btn {
   position: absolute;
-  width: 5%;
+  width: 50px;
   height: 5%;
-  top: 4%;
+  top: 10%;
   right: 5%;
 
   background: rgba(8, 73, 73, 0.877);
@@ -76,4 +76,39 @@ video {
 
 .render-overlay {
   pointer-events: auto;
+}
+
+/* ================= RENDER OVERLAY MOBILE ================= */
+@media (max-width: 768px) {
+
+  .render-scroll {
+    padding: 5px;
+    gap: 10px;
+  }
+
+  /* VIDEO */
+  video {
+    width: 100%;
+    margin-top: 130px;
+    max-height: 60vh;
+  }
+
+  /* IMÁGENES */
+  .render-scroll img {
+    width: 100%;
+    height: auto; /* 🔥 clave */
+    margin-top: 10px;
+  }
+
+  /* BOTÓN CERRAR (mucho más usable) */
+  .close-btn {
+    position: fixed; /* 🔥 importante */
+    top: 70px;
+    right: 10px;
+
+    width: 45px;
+    height: 45px;
+
+    font-size: 16px;
+  }
 }

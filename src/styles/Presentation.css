@@ -137,21 +137,11 @@ pointer-events: none;
 
   top: 10%;
   left: 10%;
-/*
-  background-image: repeating-linear-gradient(
-  45deg,
-  rgba(100,97,83,0.2),
-  rgba(100,97,83,0.05) 5px,
-  transparent 10px,
-  transparent 20px
-);*/
 
-
- /*--base-transform: translateX(-75vh) rotateY(40deg) rotatez(0.1deg) translateZ(-10vh)translatey(-20vh);*/
 }
-
+/* TITULO */
 .bio {
-  font-size: 100px;
+  font-size: clamp(2rem, 6vw, 6rem);
   line-height: 1.5;
 
   color: #c2f0ff;
@@ -164,8 +154,8 @@ pointer-events: none;
 .box-left-2 {
   position: absolute;
 
-  width: 50%;
-  height: 30%;
+max-width: 800px;
+width: 90%;
 
   top: 30%;
   left: 10%;

@@ -27,7 +27,7 @@ export const MODELS = [
      links: [
     {
       label: "View on ArtStation",
-      url: "https://tu-link.com"
+      url: "https://a_mark.artstation.com/projects/DLw2E9"
     }
    ],
 
@@ -61,7 +61,7 @@ export const MODELS = [
     links: [
     {
       label: "View on ArtStation",
-      url: "https://tu-link.com"
+      url: "https://a_mark.artstation.com/projects/ZlQ0ex"
     }
    ],
 
@@ -80,8 +80,7 @@ export const MODELS = [
   // 🧱 MODELO 2 - MODULAR
   // ==============================
   {
-    name: `Modular 
-    Environment`,
+    name: `Modular Environment`,
     path: "/models/VendingMachine.glb",
 
     description: `Modular environment, based on the "Ho oh Club" - Cyberpunk.
@@ -94,8 +93,12 @@ export const MODELS = [
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },
+      { name: "Rizom UV", icon: "/icons/Rizom_Icon.png" },
       { name: "Substance 3D Painter", icon: "/icons/3DPainter_Icon.png" },
+      { name: "Substance 3D Designer", icon: "/icons/3DDesigner_Icon.png" },
+      { name: "Marmoset Toolbag", icon: "/icons/Marmoset_Icon.png" },
       { name: "Unreal Engine", icon: "/icons/Unreal_Icon.png" },
+      { name: "Adobe Premiere", icon: "/icons/Premiere_Icon.png" },
     ],
 
     sections: ["video", "assets", "uv", "render"],
