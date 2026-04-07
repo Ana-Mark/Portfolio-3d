@@ -18,11 +18,11 @@ export const MODELS = [
     path: "/models/Weapon_Portfolio_04.glb",
 
     // Texto descriptivo
-    description: `3D Hard Surface Asset, recreation of the weapon M-240B.
+    description: `3D Hard Surface Asset, a recreation of the M-240B weapon.
     
-    Focused on clean topology and optimization of multiples UV Sets.
+    Focused on clean topology and optimization of multiple UV Sets.
     
-    Combination and use of Blender, Plasticity and Zbrush, for the modeling.`,
+    Modeled using Blender, Plasticity, and ZBrush.`,
 
      links: [
     {
@@ -42,6 +42,19 @@ export const MODELS = [
       { name: "Substance 3D Painter", icon: "/icons/3DPainter_Icon.png" },
       { name: "Marmoset Toolbag", icon: "/icons/Marmoset_Icon.png" },
     ],
+    camera: {
+  default: {
+    position: [0.1119, 0.0322, -0.5739],
+    target: [0.0226, -0.0293, -0.0042]
+  }
+},
+lights: [
+  { type: "ambient", intensity: 0.9, color: "#ffffff" },
+
+  { type: "directional", position: [3, 5, -2], intensity: 2.5, color: "#f7ceaa" }, // cálido
+
+  { type: "directional", position: [-3, 2, 2], intensity: 2, color: "#dab4b4" } // frío (rim)
+],
 
     // Qué tabs tiene este modelo
     sections: ["description", "uv", "render"],
@@ -54,9 +67,9 @@ export const MODELS = [
     name: "Zippo Lighter",
     path: "/models/Zippo_Portfolio_01.glb",
 
-    description: `3D asset inspired by the classic Poker game.
+    description: `3D asset inspired by the classic poker theme.
     
-    Focused on clean topology and realistic metalic textures and damage`,
+    Focused on clean topology and realistic metallic textures and wear`,
 
     links: [
     {
@@ -73,6 +86,20 @@ export const MODELS = [
       { name: "Photoshop", icon: "/icons/Photoshop_Icon.png" },
     ],
 
+    camera: {
+  default: {
+    position: [0.01699, -0.00014, -0.1025],
+    target: [-0.0104, -0.00505, -0.00651]
+  }
+},
+lights: [
+  { type: "ambient", intensity: 0.15, color: "#ffffff" },
+
+  { type: "directional", position: [3, 5, -2], intensity: 2, color: "#f7ceaa" }, // cálido
+
+  { type: "directional", position: [-3, 2, 2], intensity: 1, color: "#ffc4c4" } // frío (rim)
+],
+
     sections: ["description", "uv", "render"],
   },
 
@@ -83,10 +110,10 @@ export const MODELS = [
     name: `Modular Environment`,
     path: "/models/VendingMachine.glb",
 
-    description: `Modular environment, based on the "Ho oh Club" - Cyberpunk.
+    description: `Modular environment based on the "Ho-Oh Club" - Cyberpunk.
     Focused on the use of modular assets for an optimized environment.
     
-    Use of Unreal engine, Substance Painter and Substance Designer for the textures and light `,
+    Textures and lighting created using Unreal Engine, Substance Painter, and Substance Designer. `,
 
     // 👇 ahora el vídeo también vive aquí
     video: "/videos/Video_Modular - Trim.mp4",
@@ -101,6 +128,37 @@ export const MODELS = [
       { name: "Adobe Premiere", icon: "/icons/Premiere_Icon.png" },
     ],
 
+    camera: {
+  default: {
+    position: [0.1119, 0.0322, -0.5739],
+    target: [0.0226, -0.0293, -0.0042]
+  },
+
+  heroUV: {
+    position: [2.0116, 1.4195, -2.4504],
+    target: [0.1957, 0.9710, 0.2068]
+  },
+
+  tileable: {
+    position: [0.1119, 0.0322, -0.5739],
+    target: [0.0226, -0.0293, -0.0042]
+  },
+
+  assets: {
+    position: [0, 0, 0],
+    target: [0, 0, 0]
+  }
+},
+lights: [
+  { type: "ambient", intensity: 0.2 },
+
+  { type: "directional", position: [5, 8, -5], intensity: 2 },
+
+  { type: "point", position: [0, 2, 2], intensity: 0 },
+
+  { type: "point", position: [-2, 1, 0], intensity: 0 }
+],
+
     sections: ["video", "assets", "uv", "render"],
     
   },
@@ -114,14 +172,26 @@ export const MODELS = [
 
     description: ` Work in progress.
 
-    I'm currently working on this piece.
-    Its a recreation of a hand made clock by the artist Eric Freitas.
+    I am currently working on this piece.
+    It is a recreation of a handmade clock by the artist Eric Freitas.
     
-    Focused on a realistic modeling of a clock mechanism, with all the pieces this includes`,
+    Focused on realistic modeling of a clock mechanism, including all its components`,
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },
     ],
+
+     camera: {
+  default: {
+    position: [-0.25510670774939836, 0.21059369135032624, -1.7439489586426526],
+    target: [-0.010311102899131477, 0.0804254075124173, 0.002159712835420464]
+  }
+},
+lights: [
+  { type: "ambient", intensity: 0.5 },
+  { type: "directional", position: [3, 5, -2], intensity: 1, color: "#f7b9aa" }, // cálido
+  { type: "directional", position: [-3, 4, -2], intensity: 1.8 }
+],
 
     sections: ["description"],
   }

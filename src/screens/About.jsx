@@ -53,13 +53,13 @@ export default function About() {
         </div>
         <div className="about-box-inside-skills">
         <p>3D Modeling</p>
-        <p>Texturing (PBR)</p>
+        <p>Texturing</p>
         <p>UV Mapping</p>
         <p>Rendering</p>
         <p>Teamwork</p>
         <p>Adaptability</p>
         <p>Creativity</p>
-        <p>Atention to Details</p>
+        <p>Attention to Detail</p>
         </div>
       </div>
 
@@ -129,16 +129,18 @@ export default function About() {
         </div>
         <div className="about-box-me">
         <p>
-In all working evironments I have been allways told how good my relationship with
-my teamwork has been, and how that quality helps in stressful environment.
+In every work evironment, I have allways been recognized for having strong 
+teamwork skills and maintaining good relationships with my colleagues, especially 
+in stressful situations.
 </p>
 <p>
-I'm a really curious and fast learned person, if theres a program I dont know biggest is my
-enthusiasm to learn and tinker with it. 
+I am a very curious and fast learner. If there is a program I don't know, my 
+enthusiasm to learn and experiment with it is even greater.
         </p>
         <p>
-As a hard working person, I've been able to finish my studies while I manteined my 40 h/week job for the las 3 years at a store.
-So I can say I don't give up easily! 
+As a hard working person, I have successfully completed my studies while 
+maintaining a 40-hour work week for the past three years.
+So I can confidently say that I don't give up easily. 
         </p>
 
         </div>

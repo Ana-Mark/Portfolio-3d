@@ -119,7 +119,7 @@ pointer-events: none;
   height: 90%;
 
   background: rgba(26, 59, 148, 0);
-  border-radius: 20px;
+  border-radius: 3px;
   
   
 
@@ -157,7 +157,7 @@ pointer-events: none;
 max-width: 800px;
 width: 90%;
 
-  top: 30%;
+  top: 35%;
   left: 10%;
   
 
@@ -173,23 +173,33 @@ width: 90%;
 
 
 .box-right-1 {
-  opacity: 0;
-
   position: absolute;
 
-  width: 30%;
-  height: 30%;
+ max-width: 800px;
+ width: 90%;
+ max-height: 800px;
+ height: 5%;
 
-  top: 5%;
-  left: 65%;
+   background:
+    linear-gradient(
+      to right,
+      rgba(0, 255, 255, 0.452),
+      rgba(0, 255, 255, 0));
+
+  top: 29%;
+  left: 11%;
   
 
 }
+
 .estudios{
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 20px;
+  
   color: #c2c2c2;
-  padding: 20px;
+
+
+
+  padding: 10px;
 }
 
 

@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Suspense, useState, useRef } from "react";
+import { Suspense, useState } from "react";
 import { Html } from "@react-three/drei"
 import Scene from "../components/ThreeScene.jsx";
 import UI from "../components/UI.jsx";
@@ -26,52 +26,16 @@ export default function Viewer({ setScreen, selectedModel }) {
   //const [animationOn, setAnimationOn] = useState(true);
   const [activeMaps, setActiveMaps] = useState({});
 
-  const controlsRef = useRef();
+  const [controls, setControls] = useState(null);
 
-  const isHeroVisible =
-  activeModel === 2 &&
-  activeSection === "uv" &&
-  uvMode === "unique"
+ 
+
 
 
 
   
 
 const [isLoading, setIsLoading] = useState(true)
-
-
-const CAMERA_CONFIG = [
-  {
-    position: [0.21277105461555995, 0.05505210998858599, -0.5340924309310153],
-    target: [0.07728372112301284, -0.021451073091122586, 0.16478306360324096]
-  },
-  {
-    position: [0.012934363928922187, 0.007499564186675162, -0.0793050484994271],
-    target: [-0.025580645995242735, -0.009182090552055877, 0.05288632877192715]
-  },
-  {
-      position: [2.011652546627659, 1.4195262677694802, -2.4504182936288017],
-      target: [0.1957639993035172, 0.9710210725883038, 0.20682626799816578]
-  },
-  {
-    position: [-0.6119123122618138, 0.3832340895987131, -1.5967833911753857],
-    target: [-0.056397185883691046, 0.1804774909928045, 0.06936692286265257]
-  }
-]
-const MODULAR_CAMERA = {
-  heroUV: {
-      position: [2.011652546627659, 1.4195262677694802, -2.4504182936288017],
-      target: [0.1957639993035172, 0.9710210725883038, 0.20682626799816578]
-  },
-    tileable: {
-      position: [2.011652546627659, 1.4195262677694802, -2.4504182936288017],
-      target: [0.1957639993035172, 0.9710210725883038, 0.20682626799816578]
-  },
-  assets: {
-      position: [2.011652546627659, 1.4195262677694802, -2.4504182936288017],
-      target: [0.1957639993035172, 0.9710210725883038, 0.20682626799816578]
-  }
-}
 
   
 
@@ -110,57 +74,32 @@ useEffect(() => {
 
 
 useEffect(() => {
-  if (!controlsRef.current) return
+  if (!controls) return
 
-  const controls = controlsRef.current
   const camera = controls.object
+  const currentModel = MODELS[activeModel]
 
-  let config = null
+  let config = currentModel.camera?.default
 
-  // 🔵 modelos normales
-  if (activeModel !== 2) {
-    config = CAMERA_CONFIG[activeModel]
+  if (activeModel === 2 && activeSection === "uv" && uvMode === "unique") {
+    config = currentModel.camera?.heroUV
   }
 
-  // 🟢 SOLO hero UV necesita cámara
-  if (isHeroVisible) {
-    config = {
-      position: [2.011652546627659, 1.4195262677694802, -2.4504182936288017],
-      target: [0.1957639993035172, 0.9710210725883038, 0.20682626799816578]
-    }
+  if (activeModel === 2 && activeSection === "assets") {
+    config = currentModel.camera?.assets
   }
 
   if (!config) return
+
+  controls.reset()
 
   camera.position.set(...config.position)
   controls.target.set(...config.target)
 
   controls.update()
 // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [activeModel, isHeroVisible])
+}, [controls, activeModel, activeSection, uvMode])
 
-useEffect(() => {
-  if (!isHeroVisible) return
-
-  // pequeño delay para esperar a que el modelo exista
-  setTimeout(() => {
-    if (!controlsRef.current) return
-
-    const controls = controlsRef.current
-    const camera = controls.object
-
-    camera.position.set(2.011652546627659, 1.4195262677694802, -2.4504182936288017)
-    controls.target.set(0.1957639993035172, 0.9710210725883038, 0.20682626799816578)
-
-    controls.update()
-  }, 50)
-
-}, [isHeroVisible])
-
-
-useEffect(() => {
-  triggerLoading()
-}, [activeModel])
 
 
 
@@ -171,11 +110,6 @@ useEffect(() => {
   if (activeSection === "uv") {
     setActiveAsset("heroUV")
     setUvMode("unique")
-
-    // 🔥 fuerza refresco del modelo
-    setActiveMaps(prev => ({ ...prev }))
-
-    triggerLoading()
   }
 }, [activeSection, activeModel])
 
@@ -183,10 +117,17 @@ useEffect(() => {
   if (activeModel !== 2) return
 
   if (activeSection === "assets") {
-    setActiveAsset("hero") // 🔥 fuerza Hero Asset
+    setActiveAsset("hero")
   }
-
 }, [activeSection, activeModel])
+
+useEffect(() => {
+  triggerLoading()
+}, [activeModel])
+
+
+
+
 
 
 
@@ -194,8 +135,6 @@ useEffect(() => {
 useEffect(() => {
   const handleKey = (e) => {
     if (e.key !== "c") return
-
-    const controls = controlsRef.current
     if (!controls) return
 
     const camera = controls.object
@@ -210,7 +149,7 @@ useEffect(() => {
 
   window.addEventListener("keydown", handleKey)
   return () => window.removeEventListener("keydown", handleKey)
-}, [])
+}, [controls])
 
 
 
@@ -246,24 +185,61 @@ const triggerLoading = () => {
   </div>
 )}
 
-       <Canvas
-         camera={{ near: 0.01, far: 1000 }}
-onCreated={({ camera }) => {
-  const config = CAMERA_CONFIG[activeModel]
-  if (!config) return
 
-  camera.position.set(...config.position)
-}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <Canvas
+         key={activeModel + activeSection + uvMode}
+         camera={{ near: 0.01, far: 1000 }}
         >
 
-          <ambientLight intensity={0.3} />
-          <directionalLight position={[3, 5, -2]} intensity={2} />
 
+{MODELS[activeModel].lights?.map((light, i) => {
+  if (light.type === "ambient") {
+    return (
+      <ambientLight
+        key={i}
+        intensity={light.intensity}
+        color={light.color || "#ffffff"}
+      />
+    )
+  }
 
+  if (light.type === "directional") {
+    return (
+      <directionalLight
+        key={i}
+        position={light.position}
+        intensity={light.intensity}
+        color={light.color || "#ffffff"}
+      />
+    )
+  }
 
+  if (light.type === "point") {
+    return (
+      <pointLight
+        key={i}
+        position={light.position}
+        intensity={light.intensity}
+        color={light.color || "#ffffff"}
+      />
+    )
+  }
 
-
-
+  return null
+})}
 
 
 
@@ -290,15 +266,16 @@ onCreated={({ camera }) => {
 
 
           <OrbitControls
-  ref={controlsRef}
+  ref={setControls}
   makeDefault
   enablePan={true}
   minDistance={0.1}
   maxDistance={5}
+   enableDamping={false}
 />
 
         </Canvas>
-        
+
       </div>
 
       

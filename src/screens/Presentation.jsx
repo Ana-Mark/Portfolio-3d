@@ -24,10 +24,10 @@ export default function Presentation({ setScreen }) {
 
             <div className="presentation-box box-left-2">
               <p className="contacto">
-                Hi, I'm Ana Marquina a Spanish 3D artist. 
-                I'm a curious and pasionate person who loves to try and experimenting with anything new I encounter.
-                I dream for a day my work can help on leaving a great impact on people, so I'll continue learning and improving for that purpose.
-                With this portfolio I'm aiming to show you my 3D modeling, texturing, and rendering skills.
+                Hi, I'm Ana Marquina, a Spanish 3D artist. 
+                I'm a curious and passionate person who loves experimenting with anything new I encounter.
+                I hope that one day my work can make a meaningful impact on people, so I’m constantly learning and improving toward that goal.
+                With this portfolio, I aim to showcase my 3D modeling, texturing, and rendering skills.
               </p>
             </div>
 {/* 
@@ -35,14 +35,7 @@ export default function Presentation({ setScreen }) {
 */}
             <div className="presentation-box box-right-1">
               <p className="estudios">
-                Superior en Animaciones 3D, Juegos y Entornos Interactivos
-                (CEU-2020 . 2022 )
-                Máster de Formación Permanente en Arte para Videojuegos 
-                (Florida Universitaria- 2024 . 2025)
-                Titulo oficial en Ingles avanzado C1 
-                (Lenguas Vivas / Cambridge Exams Centre - 2023)
-                Castellano : Native
-                English : C1 Certificated
+                3D Artist
               </p>
             </div>
 
