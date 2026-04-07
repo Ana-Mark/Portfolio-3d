@@ -103,20 +103,13 @@ useEffect(() => {
 
 
 
-useEffect(() => {
-  if (activeModel !== 2) return
 
-  if (activeSection === "uv") {
-    setActiveAsset("heroUV")
-    
-  }
-}, [activeSection, activeModel])
 
 useEffect(() => {
   if (activeModel !== 2) return
 
   if (activeSection === "assets") {
-    setActiveAsset("hero")
+    setActiveAsset("modular")
   }
 }, [activeSection, activeModel])
 

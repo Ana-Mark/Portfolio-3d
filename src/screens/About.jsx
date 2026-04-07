@@ -14,8 +14,12 @@ export default function About() {
     <div className="about-container">
 
 
+      
+
+
 
       {/* ESTUDIOS */}
+      <div className="about-box-Personal">
       <div className="about-box-Education">
 
         <div className="about-box-title">
@@ -24,22 +28,41 @@ export default function About() {
         <div className="about-box-inside">
 
           <div className="about-box-inside-1">
-             <p>2020-2022</p>
+             <p>2020-2022 </p>
              <p>Grado superior. Animaciones 3D, Juegos y Entornos Interactivos</p>
+             <p>(CEU Cardenal Herrera) </p>
           </div>
 
           <div className="about-box-inside-2">
             <p>2023</p>
             <p>Certificate in Advanced English. C1 Level</p>
+            <p>Number 16 School</p>
           </div>
 
           <div className="about-box-inside-3">
             <p>2024-2025</p>
            <p>3D Master AAA Art for Videogamest</p>
+           <p>Florida Universitaria</p>
           </div>
 
 
         </div>
+      </div>
+            {/* SOCIAL */}
+      <div className="about-box-Contact">
+        <div className="about-box-title">
+        <h1>Contact</h1>
+        </div>
+        <div className="about-box-Contact-inf">
+        <div className="about-box-link">
+        <a href="https://a_mark.artstation.com">ArtStation</a>
+        <a href="https://www.linkedin.com/in/anamarquina21/">LinkedIn</a>
+        </div>
+        <div className="about-box-mail">
+          <p>a.marquinachanza@gmail.com</p>
+        </div>
+        </div>
+      </div>
       </div>
 
 
@@ -96,19 +119,7 @@ export default function About() {
 
 
 
-      {/* SOCIAL */}
-      <div className="about-box-Contact">
-        <div className="about-box-title">
-        <h1>Contact</h1>
-        </div>
-        <div className="about-box-link">
-        <a href="https://a_mark.artstation.com">ArtStation</a>
-        <a href="https://www.linkedin.com/in/anamarquina21/">LinkedIn</a>
-        </div>
-        <div className="about-box-mail">
-          <p>a.marquinachanza@gmail.com</p>
-        </div>
-      </div>
+
 
 
 

@@ -93,7 +93,7 @@
   width: 95px;
   height: 70vh;
 
-  background-color: rgba(0, 255, 255, 0.048);
+  background-color: rgba(0, 255, 255, 0);
 
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@
 .icon-tabs {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .icon-tabs button {
@@ -140,24 +140,24 @@
 ========================= */
 .text-block {
   position: fixed;
-  top: 10%;
-  right: 2%;
+  top: 7%;
+  right: 1%;
 
-  width: min(400px, 30vw);
+  width: min(455px, 30vw);
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 95px;
 
   padding: 20px;
 
-  background-color: rgba(0, 255, 255, 0.08)
+  background-color: rgba(0, 255, 255, 0)
 }
 
 .model-title {
   
   color: aliceblue;
-  font-size: clamp(16px, 1.5vw, 30px);
+  font-size: clamp(16px, 1.5vw, 25px);
   white-space: pre-line;
 
 
@@ -168,23 +168,23 @@
   font-size: clamp(12px, 1vw, 17px);
   white-space: pre-line;
 
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .link-block {
   position: fixed;
-  top: 0%;
+  top: 55%;
   right: 2%;
 
-  width: min(400px, 30vw);
+  width: min(450px, 30vw);
 
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 130px;
 
   padding: 20px;
 
-  background-color: rgba(0, 255, 255, 0.08)
+  background-color: rgba(0, 255, 255, 0)
 }
 
 .links a {
@@ -195,8 +195,8 @@
 /* SOFTWARE ICONS */
 .software-block {
   position: fixed;
-  top: 50%;
-  right: 2%;
+  top: 60%;
+  right: 4%;
 
   width: min(400px, 30vw);
 
@@ -206,7 +206,20 @@
 
   padding: 20px;
 
-  background-color: rgba(0, 255, 255, 0.08)
+  background: linear-gradient(
+    to bottom,
+    rgba(0,255,255,0),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0)
+  );
+}
+.software-title {
+  color: rgb(255, 255, 255);
+  font-size: clamp(12px, 1vw, 20px);
+  
+
+  
 }
 .software-inline {
   display: flex;
@@ -215,13 +228,7 @@
 
   padding: 8px;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0,255,255,0),
-    rgba(0,255,255,0.15),
-    rgba(0,255,255,0.15),
-    rgba(0,255,255,0)
-  );
+  
 }
 
 .software-inline img {
@@ -257,7 +264,7 @@
   top: 10%;
   left: 4%;
 
-  width: min(90vw, 1340px); /* 🔥 clave */
+  width: min(90vw, 1340px);
   height: 85vh;
 
   background-color: rgb(4, 32, 32);
@@ -269,75 +276,213 @@
   overflow: hidden;
  
 }
+
+.Assets-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 20%;
+  height: 6%;
+  top: 25%;
+  right: 2%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,255,255,0),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0)
+  );
+
+}
+.Assets-title {
+  margin-top: 3%;
+  color: rgb(45, 219, 205);
+  font-size: clamp(12px, 2vw, 26px);
+
+
+}
+
+
 .assets-view {
   width: 100%;
   height: 100%;
 
   display: flex;
   flex-direction: column;
-  gap: 12px; /* 🔥 mucho más controlado */
+   
+  gap: 30px; 
 
   overflow-y: auto;
   overflow-x: hidden;
 
-  padding: 12px;
+  padding: 35px;
+  margin-top: 1%;
 
-  min-height: 0; /* 🔥 BUG FIX FLEX */
+  min-height: 0; 
   
 }
 
 .assets-view img {
   width: 100%;
-  min-height: 400px; /* 🔥 clave */
+  min-height: 400px; 
   object-fit: contain;
 
   flex-shrink: 0;
   
 }
+.assets-buttons button {
+  font-size: clamp(12px, 1vw, 15px);
+  color: aliceblue;
+
+  background: rgba(2, 48, 48, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+
+  padding: 8px 30px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.assets-buttons button:hover {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: rgba(0, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+.assets-buttons button.active {
+  background: rgba(0, 255, 255, 0.575);
+  border-color: #00ff22;
+
+  color: #101014;
+
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+
+  transform: translateY(-2px);
+}
+.assets-buttons {
+  position: fixed;
+  display: flex;
+  gap: 430px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+
 
 /* =========================
    UV + MATERIAL SYSTEM
 ========================= */
+.Textures-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 23%;
+  height: 6%;
+  top: 18%;
+  right: 2%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,255,255,0),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0)
+  );
+
+}
+.Textures-title {
+  margin-top: 3%;
+  color: rgb(45, 219, 205);
+  font-size: clamp(12px, 2vw, 26px);
+
+
+}
+
 .bottom-textures-parent {
-  display: flex;
+  position: fixed;
+   display: flex;
+  
+  justify-content: flex-end;
   flex-direction: column;
-  height: 530%;
-  width: 98%;
-  background-color: rgba(245, 245, 220, 0);
+
+  height: 100%; /* 🔥 clave */
+  width: 100%;
+  
+  background-color: rgba(220, 245, 223, 0);
+  pointer-events: none;
 }
 .bottom-textures {
-  margin-top: auto;
-
-  width: 100%;
-  height: 22%;
-
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+
+  
+  height: 33%;
+  padding: 40px;
 
   overflow: hidden;
+   background-color: rgba(245, 245, 220, 0);
 }
 
-.uv-sets-grid,
-.material-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(140px, auto);
+.uv-sets-grid {
+  display: flex;
+  flex-direction: row;
 
-  gap: 6px;
-  padding: 10px;
+  gap: 20px;
 
   overflow-x: auto;
+  overflow-y: hidden;
 
-  background: rgba(0, 63, 63, 0.5);
-  border: 2px solid rgba(0,255,255,0.3);
+  max-width: 100%;
+  height: 100%;
+          background: rgba(2, 43, 43, 0.89);
+  border: 0px solid rgba(0, 255, 255, 0.671);
+
+}
+.uv-set-column {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 200px;
+        background: rgba(4, 112, 112, 0.432);
+  border: 1px solid rgba(0,255,255,0.3);
+}
+.uv-maps-column {
+  display: flex;
+  flex-direction: row;
+
+  gap: 6px;
 }
 
-.uv-maps-column img,
-.material-column img {
-  width: clamp(60px, 6vw, 140px);
+
+
+.uv-maps-column img {
+  width: clamp(120px, 12vw, 180px);
   height: auto;
   object-fit: contain;
-  border: 5px solid rgba(0,255,255,0.3);
+
+  border: 2px solid transparent;
+  padding: 10px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.uv-maps-column img:hover {
+  transform: scale(1.01);
+  border-color: rgba(0, 255, 255, 0.5);
+}
+
+.uv-maps-column img.active {
+  border-color: #00ffb3;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.01);
+}
+.material-column img {
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+  object-fit: contain;
+  border: 5px solid rgba(0, 255, 255, 0);
+  padding: 10px;
   
 }
 
@@ -346,8 +491,9 @@
 ========================= */
 button {
   font-size: clamp(12px, 1vw, 14px);
-    background: rgba(0,255,255,0.3);
-  border: 1px solid rgba(0,255,255,0.3);
+  color: aliceblue;
+    background: rgba(2, 48, 48, 0.767);
+  border: 10px solid rgba(0, 255, 255, 0);
 }
 
 /* =========================

@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-    <MainMenu setScreen={setScreen} /> {/* 🔥 SIEMPRE visible */}
+    <MainMenu setScreen={setScreen} screen={screen} />
 
       {screen === "selector" && (
        <ModelSelector setScreen={setScreen} setSelectedModel={setSelectedModel} />

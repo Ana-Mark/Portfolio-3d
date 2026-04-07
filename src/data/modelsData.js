@@ -159,7 +159,7 @@ lights: [
   { type: "point", position: [-2, 1, 0], intensity: 0 }
 ],
 
-    sections: ["video", "assets", "uv", "render"],
+    sections: ["video", "assets", "render"],
     
   },
 

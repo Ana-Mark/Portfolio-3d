@@ -49,32 +49,74 @@ function UI({
   
 )}
 
-{activeSection === "uv" && activeModel === 2 && (
-  <div className="assets-canvas-parent">
-    <div className="assets-canvas">
 
-      {/* BOTONES */}
-      <div className="assets-buttons">
+
+
+
+
+
+
+
+
+
+
+        
+
+        {activeSection === "assets" && (
+          <div className="assets-canvas-parent">
+         <div className="assets-canvas">
+                <div className="Assets-title-parent">
+  <div className="Assets-title">
+    <p>Assets and Textures</p>
+  </div>
+  </div>
+
+           {/* BOTONES */}
+            <div className="assets-buttons">
+
+
+<button
+  className={activeAsset === "modular" ? "active" : ""}
+  onClick={() => setActiveAsset("modular")}
+>
+  Modular Assets
+</button>
+
+
+
+
+     
         <button
           className={activeAsset === "heroUV" ? "active" : ""}
           onClick={() => setActiveAsset("heroUV")}
         >
-          Hero UV
+          Hero Asset
         </button>
 
         <button
           className={activeAsset === "tileable" ? "active" : ""}
           onClick={() => setActiveAsset("tileable")}
         >
-          Tileable
+          Tile Textures
         </button>
-      </div>
+    
 
-      {/* CONTENIDO */}
-      {activeAsset === "heroUV" && (
+           </div>
+
+           {/* CONTENIDO */}
+
+
+            {activeAsset === "modular" && (
+             <div className="assets-view">
+               <img src="/Textures/Renders/ModularAssets_01.jpeg" />
+               <img src="/Textures/Renders/ModularAssets_02.jpeg" />
+             </div>
+            )}
+
+                 {activeAsset === "heroUV" && (
         <div className="assets-view">
-          <img src="/Textures/Renders/HeroUV_01.jpg" />
-          <img src="/Textures/Renders/HeroUV_02.jpg" />
+          <img src="/Textures/Renders/4 - Texture Sets.png" />
+          
         </div>
       )}
 
@@ -83,47 +125,6 @@ function UI({
           <img src="/Textures/Renders/TileableTextures_01.jpg" />
         </div>
       )}
-
-    </div>
-  </div>
-)}
-        
-
-        {activeSection === "assets" && (
-          <div className="assets-canvas-parent">
-         <div className="assets-canvas">
-
-           {/* BOTONES */}
-            <div className="assets-buttons">
-<button
-  className={activeAsset === "hero" ? "active" : ""}
-  onClick={() => setActiveAsset("hero")}
->
-  Hero Asset
-</button>
-
-<button
-  className={activeAsset === "modular" ? "active" : ""}
-  onClick={() => setActiveAsset("modular")}
->
-  Modular Assets
-</button>
-           </div>
-
-           {/* CONTENIDO */}
-           {activeAsset === "hero" && (
-             <div className="assets-view">
-               <img src="/Textures/Renders/VM_Picture_01.jpg" />
-
-             </div>
-            )}
-
-            {activeAsset === "modular" && (
-             <div className="assets-view">
-               <img src="/Textures/Renders/ModularAssets_01.jpeg" />
-               <img src="/Textures/Renders/ModularAssets_02.jpeg" />
-             </div>
-            )}
 
           </div>
           </div>

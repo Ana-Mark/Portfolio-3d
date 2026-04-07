@@ -108,6 +108,11 @@ useEffect(() => {
  return (
 
 <div className="uv-sets-grid">
+  <div className="Textures-title-parent">
+  <div className="Textures-title">
+    <p>Textures</p>
+  </div>
+  </div>
 
    {sets.map((set, setIndex) => (
 
