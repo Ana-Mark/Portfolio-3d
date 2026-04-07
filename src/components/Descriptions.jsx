@@ -21,6 +21,7 @@ function ModelDescription({ activeModel }) {
   // ==============================
   return (
     <>
+    <div class="text-block">
       <div className="model-title">
       <h1>{model.name}</h1>
       </div>
@@ -28,13 +29,15 @@ function ModelDescription({ activeModel }) {
       <div className="model-description">
       <p>{model.description}</p>
       </div>
-
+      </div>
+<div class="link-block">
 <div className="links">
   {model.links?.map((link) => (
     <a key={link.url} href={link.url} target="_blank">
       {link.label}
     </a>
   ))}
+</div>
 </div>
     </>
   )

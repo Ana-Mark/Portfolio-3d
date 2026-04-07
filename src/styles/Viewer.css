@@ -1,605 +1,358 @@
 
-/*
 * {
-  outline: 1px solid red;
+  box-sizing: border-box;
 }
 
-
-
-/* BASE */
+/* =========================
+   APP ROOT
+========================= */
 .app-container {
-  position: fixed; /* 🔥 importante */
+  position: fixed;
   inset: 0;
   z-index: 200;
+
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  grid-template-rows: 1fr;
+  height: 100vh;
 
   background:
     radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4)),
     radial-gradient(circle at 30% 40%, rgba(100,16,41,0.4), transparent 60%),
     repeating-linear-gradient(45deg, rgba(100,16,41,0.2) 1px, transparent 1px),
     linear-gradient(#101014, #141418);
+}
 
-   background-size: 100% 100%;
+/* =========================
+  (3D VIEWPORT)
+========================= */
+.canvas-container {
+  position: relative;
+  width: 80%;
+  height: 85%;
+  top: 10%;
+  left: 5%;
+
+  background-color: #0e0e1d;
+  border: 3px solid rgba(0, 255, 255, 0.15);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-}
-
-
-
-
-
-
-/* 3D MODEL CONTAINER*/
-.canvas-container {
-  position: relative;
-  
-  width: 70%;
-  height: 85%;
-  
-  margin-right: 25%;
-  top: 3%;
-  z-index: 0;
-
-   background-color: #0e0e1d;
-   border: 3px solid rgba(0, 255, 255, 0.15);
-   border-radius: 5px;
-
-
-
   pointer-events: auto;
+  overflow: hidden;
 }
+
 .canvas-container::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  /* GRID */
   background:
     repeating-linear-gradient(
       to right,
-      rgba(0,255,255,0.15) 0px,
-      rgba(0,255,255,0.15) 1px,
+      rgba(0,255,255,0.12) 0px,
+      rgba(0,255,255,0.12) 1px,
       transparent 1px,
       transparent 40px
     ),
     repeating-linear-gradient(
       to bottom,
-      rgba(0,255,255,0.15) 0px,
-      rgba(0,255,255,0.15) 1px,
+      rgba(0,255,255,0.12) 0px,
+      rgba(0,255,255,0.12) 1px,
       transparent 1px,
       transparent 40px
     );
 
-  /* PERSPECTIVA */
-  transform: perspective(600px) rotateX(0deg);
-  transform-origin: center;
+  mask-image: linear-gradient(
+    rgba(0,0,0,0),
+    rgba(0,0,0,1),
+    rgba(0,0,0,1),
+    rgba(0,0,0,0)
+  );
 
-  /* DESVANECER HACIA EL FONDO */
-  mask-image: linear-gradient( rgba(0,0,0,0),rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0));
-
- 
-
-
-}
-
-
-
-
-
-
-
-
-
-/*UI - MENU - BUTTONS*/
-.ui-menu {
-  position: absolute;
-
-  width: 10%;
-  height: 5%;
-
-  background-color: rgba(255, 0, 0, 0);
-
-  inset: 0;
-  pointer-events: auto;
-  z-index: 0;
-  
-}
-
-
-/* UI CARACTERISTICS MODEL - CONTAINER*/
-.ui-models {
-  position: absolute;
-
-  height: 86%;
-  width: 95%;
-
-  right: 3%;
-  top: 10%;
-
-  display: flex;
-  flex-direction: column;
- 
-
-z-index: 10;
   pointer-events: none;
- background-color: rgba(255, 0, 0, 0);
-  
-  
 }
 
 
-.right-ui{
-  position: absolute;
-  
-  height: 95%;
-  width: 24%;
 
-  right: 0%;
-  margin-top: 1%;
- background-color: rgba(0, 17, 255, 0);
-  
-pointer-events: auto;
-}
-/*Botones UI*/
-.icon-tabs{
-  position: absolute;
+
+
+
+
+
+/* =========================
+   RIGHT UI PANEL
+========================= */
+.right-ui {
+  position: fixed;
+  top: 23%;
+  right: 21%;
+
+  width: 95px;
+  height: 70vh;
+
+  background-color: rgba(0, 255, 255, 0.048);
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 50%;
-  margin-top: 23%;
-  background-color: rgba(0, 255, 255, 0);
-   transition: all 0.2s ease;
-   pointer-events: auto;
-}
-.icon-tabs button{
+  
 
-max-width: 200px;
-max-height: 200px;
- width: 180%;
- height: 11%;
+  padding: 25px;
+  gap: 20px;
+}
+
+/* =========================
+   ICON TABS
+========================= */
+.icon-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.icon-tabs button {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  min-height: 44px;
+
   background: rgba(0,255,255,0.1);
   border: 1px solid rgba(0,255,255,0.3);
 
+  transition: 0.2s ease;
+  cursor: pointer;
 }
-.icon-tabs button:hover{
 
-  background: rgba(0,255,255,0.4);
-
+.icon-tabs button:hover {
+  background: rgba(0,255,255,0.35);
 }
 
 .tab-btn.active {
-  background: rgba(0,255,255,0.4);
-  box-shadow: 0 0 10px rgba(0,255,255,0.7);
-  transform: scale(1.1);
-}
-.tab-btn.active svg {
-  fill: black; /* o blanco según fondo */
+  background: rgba(0,255,255,0.5);
+  box-shadow: 0 0 10px rgba(0,255,255,0.6);
+  transform: scale(1.05);
 }
 
+/* =========================
+   TEXT BLOCKS
+========================= */
+.text-block {
+  position: fixed;
+  top: 10%;
+  right: 2%;
 
-
-/*Titulo Descripcion 
-.content{
-  position: absolute;
+  width: min(400px, 30vw);
 
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 12px;
 
- color: aliceblue;
-  width: 100%;
-  height: 20%;
+  padding: 20px;
 
-  margin-left: 0px;
-  pointer-events: none;
+  background-color: rgba(0, 255, 255, 0.08)
+}
+
+.model-title {
   
-  background-color: rgba(38, 0, 255, 0.836);
-}*/
-.model-title{
-  
- background-color: rgba(0, 255, 255, 0);
- color: aliceblue;
- background-color: rgba(0, 255, 255, 0);
- width: 25%;
+  color: aliceblue;
+  font-size: clamp(16px, 1.5vw, 30px);
+  white-space: pre-line;
 
- max-height: 10%;
-
-
-  margin-top: -0.5%;
-  margin-left: 77%;
- font-size: 26px;
-  pointer-events: none;
-   white-space: pre-line;
-  
 
 }
 
-.model-description{
-position: absolute;
+.model-description {
+  color: aliceblue;
+  font-size: clamp(12px, 1vw, 17px);
+  white-space: pre-line;
 
-color: aliceblue;
- font-size: 17px;
+  margin-left: 20px;
+}
 
+.link-block {
+  position: fixed;
+  top: 0%;
+  right: 2%;
 
-  margin-top: 7%;
-  margin-left: 80%;
+  width: min(400px, 30vw);
 
- pointer-events: none;
- white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0.08)
 }
 
 .links a {
-  position: absolute;
-
-  margin-top: 15%;
-  margin-left: 76%;
   color: rgb(16, 150, 155);
   text-decoration: underline;
-  display: inline-block;
-  pointer-events: auto;
-  z-index: 999;
 }
 
+/* SOFTWARE ICONS */
+.software-block {
+  position: fixed;
+  top: 50%;
+  right: 2%;
 
-.software-inline  {
-  position: absolute;
+  width: min(400px, 30vw);
+
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0.08)
+}
+.software-inline {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  padding: 1%;
-margin-left: 76%;
-margin-top: 20%;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 255, 255, 0),
-      rgba(0,255,255,0.15),
-      rgba(0,255,255,0.15),
-      rgba(0, 255, 255, 0));
-  border: 2px solid rgba(0, 255, 255, 0);
-  
- 
+
+  padding: 8px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,255,255,0),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0.15),
+    rgba(0,255,255,0)
+  );
 }
+
 .software-inline img {
-  max-width: 15%;
-  width: 12%;
-  height: 15%;
-  
- 
+  width: clamp(20px, 2vw, 40px);
+  height: auto;
 }
 
-
-
-
-/*============UI - UV LAYOUT=================*/
-
-/*CONTENEDOR*/
-.bottom-textures {
+/* =========================
+   UI MODEL PANEL
+========================= */
+.ui-models {
   position: absolute;
-  display: flex;
+  inset: 0;
 
-    justify-content: right; /* 🔥 centra el zippo */
-    
-  height: 30%;   /* 🔥 usa height, no max-height */
-  width: 100%;
-  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  pointer-events: none;
+
+  background-color: rgba(250, 235, 215, 0);
+}
+
+.ui-models > * {
+  pointer-events: auto;
+}
+
+/* =========================
+   ASSETS VIEW
+========================= */
+.assets-canvas{
+  position: fixed;
+  top: 10%;
+  left: 4%;
+
+  width: min(90vw, 1340px); /* 🔥 clave */
+  height: 85vh;
+
+  background-color: rgb(4, 32, 32);
+  border: 2px solid rgba(0,255,255,0.3);
+
+  display: flex;
+  flex-direction: column;
 
   overflow: hidden;
  
- border: 2px solid rgba(244, 248, 14, 0);
- 
- pointer-events: auto;
 }
-
-
-
-
-/* CONTENEDOR IMG*/
-.uv-sets-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(180px, auto);
-  
-  width: fit-content;
-  max-width: 100%;
-
-  gap: 5px;
-  padding: 10px;
-
-  overflow-y: auto;  /* 🔥 vertical, no horizontal */
-
-  pointer-events: auto;
-
-  background: rgba(0, 63, 63, 0.59);
-  border: 3px solid rgba(0,255,255,0.3);
- 
-}
-
-
-/* BUTTONS*/
-.uv-set-column{
-  display: flex;
-  flex-direction: column;
-
- border: 3px solid rgba(0, 255, 255, 0);
-
- 
-
- 
-}
-.uv-set-column button{
-  position: absolute;
-  height: 30px;
-  width: 80px;
- color: rgb(255, 240, 240);
-    background: rgba(8, 73, 73, 0.877);
-  border: 1px solid rgba(0,255,255,0.3);
-}
-/* DISPLAY IMG*/
-.uv-maps-column{
-  display: flex;            /* 🔥 cambia grid por flex */
-  flex-wrap: wrap;          /* 🔥 permite saltos de línea */
-  gap: 1px;
-  padding: 1px;
-   
-
- 
-
-  
-
-  background-color: rgba(29, 16, 34, 0.336);
-  border: 4px solid rgba(0,255,255,0.3);
-
-       
-}
-/* IMG*/
-.uv-maps-column img {
-  width: 189px;        /* 🔥 tamaño fijo */
-  height: auto;
-
-  object-fit: contain; /* 🔥 ESTO ES LA CLAVE */
-
-  border: 2px solid transparent;
-  cursor: pointer;
-
-}
-
-
-
-
-
-
-
-
-/* ASSETS CANVAS*/
-.assets-canvas {
-  /* hijo del ui-model*/
-  position: absolute;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-
-  width: 75%;
-  height: 100%;
-
-  left: 0;
- pointer-events: auto;
- 
-  background: rgb(6, 46, 46);
-  border: 1px solid rgba(0,255,255,0.3);
-
-}
-
-.assets-buttons {
- position: absolute;
- display: flex;
- 
- top: 38%;
- right: -28%;
-}
-.assets-buttons  button{
-  height: 35px;
-  width: 130px;
-  background: rgba(0, 255, 255, 0.534);
-  border: 1px solid rgba(0, 255, 255, 0.76);
-
-}
-.assets-buttons button:hover{
-
-  background: rgba(0,255,255,0.4);
-
-}
-
-.assets-buttons.active {
-  background: rgba(0,255,255,0.4);
-  box-shadow: 0 0 10px rgba(0,255,255,0.7);
-  transform: scale(1.1);
-}
-.assets-buttons button.active,
-.uv-modes button.active {
-  background: rgba(0,255,255,0.8);
-  box-shadow: 0 0 10px rgba(0,255,255,0.7);
-}
-
 .assets-view {
-  position: absolute;
-  padding: 1%;
   width: 100%;
   height: 100%;
-  gap: 5%;
-  display: flex;
-  
-  overflow-x: auto;
-  flex-direction: column;
 
- 
-  background-color: rgba(255, 228, 196, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* 🔥 mucho más controlado */
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 12px;
+
+  min-height: 0; /* 🔥 BUG FIX FLEX */
+  
 }
 
 .assets-view img {
- 
-  height: 100%;
+  width: 100%;
+  min-height: 400px; /* 🔥 clave */
   object-fit: contain;
+
+  flex-shrink: 0;
+  
 }
 
-/* DISPLAY UV SET MODEL 2*/
-
-/* 🔥 SOLO MODULAR */
-.modular-ui {
-  flex-direction: column;
-  max-height: 22%;
-  
-  
-
- 
-}
-
-
-/* MATERIAL GALLERY distinta */
-/* BOTONES */
-.uv-modes {
-  position: fixed;
+/* =========================
+   UV + MATERIAL SYSTEM
+========================= */
+.bottom-textures-parent {
   display: flex;
-  
-  top: 43%;
-  left: 79%;
- 
-  pointer-events: auto;
-
- border: 3px solid rgba(0, 255, 255, 0);
-
+  flex-direction: column;
+  height: 530%;
+  width: 98%;
+  background-color: rgba(245, 245, 220, 0);
 }
-.uv-modes button {
-   height: 35px;
-  width: 130px;
- color: aliceblue;
-    background: rgba(8, 73, 73, 0.877);
-  border: 1px solid rgba(0,255,255,0.3);
+.bottom-textures {
+  margin-top: auto;
 
+  width: 100%;
+  height: 22%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  overflow: hidden;
 }
 
-
-
-
+.uv-sets-grid,
 .material-grid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(180px, auto);
-  
-  width: fit-content;
-  max-width: 100%;
+  grid-auto-columns: minmax(140px, auto);
 
-  gap: 5px;
+  gap: 6px;
   padding: 10px;
 
-  overflow-y: auto;  /* 🔥 vertical, no horizontal */
-
-  pointer-events: auto;
-
-    background: rgba(0, 63, 63, 0.59);
-  border: 3px solid rgba(0,255,255,0.3);
-
-}
-
-.material-column {
- display: flex;
-  flex-direction: column;
-
-border: 3px solid rgba(0, 255, 255, 0);
-}
-
-.material-column button {
-  position: absolute;
-  height: 30px;
-  width: 80px;
- color: aliceblue;
-    background: rgba(8, 73, 73, 0.877);
-  border: 1px solid rgba(0,255,255,0.3);
-}
-
-.modular-ui .uv-maps-column{
-   display: flex;            /* 🔥 cambia grid por flex */
-  flex-wrap: wrap;          /* 🔥 permite saltos de línea */
-  gap: 1px;
-   padding: 1px;
-
- 
-
-  
-
-   background-color: rgba(29, 16, 34, 0.336);
-  border: 4px solid rgba(0,255,255,0.3);
-
-      
-}
-
-.material-column img {
-  width: 139px;        /* 🔥 tamaño fijo */
-  height: auto;
-
-  object-fit: contain; /* 🔥 ESTO ES LA CLAVE */
-
-  border: 2px solid transparent;
-  cursor: pointer;
-
-}
-
-.modular-ui .assets-canvas{
-  position: fixed;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-
-  width: 71%;
-  height: 86%;
-bottom: 4%;
-  left: 2%;
- pointer-events: auto;
- 
-  background: rgb(6, 46, 46);
-  border: 1px solid rgba(0,255,255,0.3);
-
-}
-.modular-ui .assets-view {
-  position: absolute;
-  padding: 1%;
-  width: 100%;
-  height: 100%;
-  gap: 5%;
-  display: flex;
-  
   overflow-x: auto;
-  flex-direction: column;
 
- 
-  background-color: rgba(255, 228, 196, 0);
+  background: rgba(0, 63, 63, 0.5);
+  border: 2px solid rgba(0,255,255,0.3);
 }
 
-.modular-ui .assets-view img {
-  height: 100%;
+.uv-maps-column img,
+.material-column img {
+  width: clamp(60px, 6vw, 140px);
+  height: auto;
   object-fit: contain;
-
-
-
- 
-
+  border: 5px solid rgba(0,255,255,0.3);
+  
 }
 
-
-
-.loader {
-  color: white;
-  font-size: 18px;
-  letter-spacing: 2px;
-  animation: blink 1s infinite alternate;
+/* =========================
+   BUTTONS
+========================= */
+button {
+  font-size: clamp(12px, 1vw, 14px);
+    background: rgba(0,255,255,0.3);
+  border: 1px solid rgba(0,255,255,0.3);
 }
+
+/* =========================
+   LOADER
+========================= */
 .global-loader {
   position: fixed;
   inset: 0;
@@ -614,181 +367,66 @@ bottom: 4%;
   backdrop-filter: blur(6px);
 
   color: white;
-  font-size: 18px;
 }
 
-@keyframes blink {
-  from { opacity: 0.3; }
-  to { opacity: 1; }
-}
 .spinner {
   width: 30px;
   height: 30px;
+
   border: 3px solid rgba(255,255,255,0.2);
   border-top: 3px solid white;
   border-radius: 50%;
+
   animation: spin 1s linear infinite;
-  margin: 0 auto 10px;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================= MOBILE FIX ================= */
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 @media (max-width: 768px) {
 
-  /* CONTENEDOR PRINCIPAL */
   .app-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 55% 45%;
   }
 
-  /* CANVAS 3D */
-  .canvas-container {
-    width: 100%;
-    height: 55%;
-    margin-right: 0;
-    top: 50px;
-  }
-
-  /* PANEL DERECHO → se convierte en abajo */
   .right-ui {
-    position: relative;
-    width: 100%;
-    height: 45%;
-  }
+ 
+  width: 260px;
+  height: 10vh;
+  padding: 15px;
+  gap: 20px;
 
-  /* BOTONES (icon-tabs) → horizontal */
-  .icon-tabs {
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    height: auto;
-    margin-top: -65px;
-    margin-right: 260px;
-  }
-
-  .icon-tabs button {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* TEXTOS → evitar que se salgan */
-  .model-title {
-    width: 90%;
-    max-width: 500px;
-    margin: 5px auto 0 auto;
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .model-description {
-    position: relative;
-    margin: 0px auto;
-    width: 90%;
-    font-size: 12px;
-    text-align: center;
-  }
-
-  .links a {
-    position: relative;
-
-
-    margin: -10px auto;
-    display: block;
+  flex-direction: row;
+  overflow-x: auto;
     
   }
 
-  .software-inline {
-    position: relative;
-    margin: 25px auto;
-    margin-right: 0px;
-    justify-content: center;
-  }
-  .software-inline img {
-    width: 25px;
-    height: 25px;
+  .icon-tabs {
+    flex-direction: row;
+    width: 100%;
   }
 
-  /* UV / TEXTURES → que no revienten */
+  .icon-tabs button {
+    aspect-ratio: 1 / 1;
+    width: 44px;
+  }
+
   .bottom-textures {
-    margin-bottom: -20px;
-    max-height: 800px;
-    height: 26%;
+    height: 40%;
   }
 
   .uv-sets-grid,
   .material-grid {
-    grid-auto-columns: minmax(120px, auto);
+    grid-auto-columns: minmax(110px, auto);
   }
 
-  .uv-maps-column img,
-  .material-column img {
-    width: 45px;
+  .model-title,
+  .model-description {
+    text-align: center;
   }
-
-  /* BOTONES UV */
-  .uv-modes {
-    position: relative;
-    top: 0px;
-    left: auto;
-   
-    margin: 0px 0;
-  }
-
-  /* ASSETS */
-  .assets-canvas {
-    width: 100%;
-    height: 50%;
-    left: 0;
-    top: 210px;
-  }
-
-  .assets-buttons {
-    position: relative;
-    margin-top: 230px;
-    margin-right: 350px;
-
-    width: 80%;
-    height: 30%;
-   
-    
-  }
-  .modular-ui .assets-canvas{
-    width: 100%;
-    height: 38%;
-    left: 0;
-    top: 275px;
-
 }
- 
-}
-
-
-
-
-
-

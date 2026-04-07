@@ -1,7 +1,7 @@
 
 import ModelUI from "./ModelUI.jsx";
 import UVGallery from "./UVGallery.jsx"
-import MaterialGallery from "./MaterialGallery.jsx"
+
 import ModelDescription from "./Descriptions.jsx"
 import ModelSoftware from "./ModelSoftware.jsx"
 
@@ -14,8 +14,7 @@ function UI({
   activeAsset,
   setActiveAsset,
   activeMaps,
-  setActiveMaps,
-  setUvMode
+  setActiveMaps
  }) {
 
 
@@ -37,6 +36,7 @@ function UI({
        />
 
        {activeSection === "uv" && activeModel !== 2 && (
+         <div className="bottom-textures-parent">
   <div className="bottom-textures">
     <UVGallery
       activeMaps={activeMaps}
@@ -45,55 +45,52 @@ function UI({
     />
 
   </div>
+  </div>
   
 )}
 
 {activeSection === "uv" && activeModel === 2 && (
-  <div className="bottom-textures modular-ui">
-    
-    <div className="uv-modes">
-<button
-  className={activeAsset === "heroUV" ? "active" : ""}
-  onClick={() => {
-    setActiveAsset("heroUV")
-    setUvMode("unique")
-  }}
->
-  Hero UV
-</button>
+  <div className="assets-canvas-parent">
+    <div className="assets-canvas">
 
-<button
-  className={activeAsset === "tileable" ? "active" : ""}
-  onClick={() => {
-    setActiveAsset("tileable")
-    setUvMode("tileable")
-  }}
->
-  Tileable
-</button>
+      {/* BOTONES */}
+      <div className="assets-buttons">
+        <button
+          className={activeAsset === "heroUV" ? "active" : ""}
+          onClick={() => setActiveAsset("heroUV")}
+        >
+          Hero UV
+        </button>
+
+        <button
+          className={activeAsset === "tileable" ? "active" : ""}
+          onClick={() => setActiveAsset("tileable")}
+        >
+          Tileable
+        </button>
+      </div>
+
+      {/* CONTENIDO */}
+      {activeAsset === "heroUV" && (
+        <div className="assets-view">
+          <img src="/Textures/Renders/HeroUV_01.jpg" />
+          <img src="/Textures/Renders/HeroUV_02.jpg" />
+        </div>
+      )}
+
+      {activeAsset === "tileable" && (
+        <div className="assets-view">
+          <img src="/Textures/Renders/TileableTextures_01.jpg" />
+        </div>
+      )}
+
     </div>
-
-{activeAsset === "heroUV" && (
-  <div className="assets-vm-canvas">
-    <MaterialGallery
-      activeMaps={activeMaps}
-      setActiveMaps={setActiveMaps}
-    />
-  </div>
-)}
-
-{activeAsset === "tileable" && (
-  <div className="assets-canvas">
-    <div className="assets-view">
-      <img src="/Textures/Renders/TileableTextures_01.jpg" />
-    </div>
-  </div>
-)}
   </div>
 )}
         
 
         {activeSection === "assets" && (
+          <div className="assets-canvas-parent">
          <div className="assets-canvas">
 
            {/* BOTONES */}
@@ -128,6 +125,7 @@ function UI({
              </div>
             )}
 
+          </div>
           </div>
         )}
 

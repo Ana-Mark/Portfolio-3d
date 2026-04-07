@@ -22,8 +22,7 @@ export default function Viewer({ setScreen, selectedModel }) {
   );
   const [activeAsset, setActiveAsset] = useState(null);
 
-  const [uvMode, setUvMode] = useState("unique");
-  //const [animationOn, setAnimationOn] = useState(true);
+
   const [activeMaps, setActiveMaps] = useState({});
 
   const [controls, setControls] = useState(null);
@@ -81,7 +80,7 @@ useEffect(() => {
 
   let config = currentModel.camera?.default
 
-  if (activeModel === 2 && activeSection === "uv" && uvMode === "unique") {
+  if (activeModel === 2 && activeSection === "uv" ) {
     config = currentModel.camera?.heroUV
   }
 
@@ -98,7 +97,7 @@ useEffect(() => {
 
   controls.update()
 // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [controls, activeModel, activeSection, uvMode])
+}, [controls, activeModel, activeSection, ])
 
 
 
@@ -109,7 +108,7 @@ useEffect(() => {
 
   if (activeSection === "uv") {
     setActiveAsset("heroUV")
-    setUvMode("unique")
+    
   }
 }, [activeSection, activeModel])
 
@@ -200,7 +199,7 @@ const triggerLoading = () => {
 
 
        <Canvas
-         key={activeModel + activeSection + uvMode}
+         key={activeModel + activeSection }
          camera={{ near: 0.01, far: 1000 }}
         >
 
@@ -252,7 +251,7 @@ const triggerLoading = () => {
     activeSection={activeSection}
     activeMaps={activeMaps}
     activeAsset={activeAsset}
-    uvMode={uvMode}
+    
   />
 </Suspense>
 
@@ -312,7 +311,7 @@ const triggerLoading = () => {
        activeMaps={activeMaps}
        setActiveMaps={setActiveMaps}
        setScreen={setScreen}
-       setUvMode={setUvMode}
+       
       />
 
       

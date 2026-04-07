@@ -39,11 +39,6 @@ export default function Presentation({ setScreen }) {
               </p>
             </div>
 
-            <div className="presentation-box box-right-2">
-              <p className="programas">
-                Programas..
-              </p>
-            </div>
 
           </div>
         </div>
