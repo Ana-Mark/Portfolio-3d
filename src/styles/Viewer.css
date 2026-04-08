@@ -757,35 +757,69 @@ button {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+  .canvas-container {
+  position: relative;
+
+  width: 85%;
+  height: 100%;
+
+  top: 3%;
+  right: 3%;
+
+  
+  max-height: 85vh;
+
+  margin: auto;
+
+  background-color: #0e0e1d;
+  border: 3px solid rgba(0, 255, 255, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   .text-block {
-    width: 10vw;
-    width: min(200px, 35vw);
-  }
-  .model-title {
+  position: absolute;
+
+  top: 70px;
+  right: 0px;
+
+  width: min(350px, 35vw);
+
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0)
+}
+ 
+.right-ui {
+  position: absolute;
+  right: 270PX;
+
+
+
+ 
+
+   width: 100px;
+  height: auto;
+
+  background-color: rgba(0, 255, 255, 0);
+
+  display: flex;
+  flex-direction: column;
   
-  color: aliceblue;
-  font-size: clamp(15px, 1.5vw, 25px);
-  white-space: pre-line;
 
-
+  padding: 25px;
+  gap: 20px;
 }
 
-.model-description {
-  color: aliceblue;
-  font-size: clamp(12px, 1vw, 17px);
-  white-space: pre-line;
 
-  margin-left: 50px;
-}
+ 
 
-  .model-description {
-    font-size: 13px;
-  }
-
-  .right-ui {
-    right: 10px;
-  }
 
 }
