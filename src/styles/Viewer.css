@@ -817,6 +817,43 @@ button {
   padding: 25px;
   gap: 20px;
 }
+.link-block {
+  position: fixed;
+  top: 55%;
+  right: -3%;
+
+  width: min(450px, 30vw);
+
+}
+.software-block {
+  position: fixed;
+  top: 60%;
+  right: 0%;
+
+  width: min(355px, 30vw);
+
+}
+.bottom-textures {
+
+
+  
+  height: 30%;
+  padding: 20px;
+
+
+}
+.uv-maps-column img {
+  width: clamp(120px, 12vw, 120px);
+ 
+}
+.assets-canvas{
+
+
+  width: min(70vw, 1340px);
+
+ 
+}
+
 
 
  
