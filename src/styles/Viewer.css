@@ -268,11 +268,11 @@
 ========================= */
 .assets-canvas{
   position: fixed;
-  top: 10%;
-  left: 4%;
+  top: 13%;
+  left: 70px;
 
-  width: min(90vw, 1340px);
-  height: 85vh;
+  width: min(90vw, 1280px);
+  height: 80vh;
 
   background-color: rgb(4, 32, 32);
   border: 2px solid rgba(0,255,255,0.3);
@@ -651,9 +651,9 @@ button {
 .assets-canvas{
   top: 70px;
 height: 85%;
-left: 40px;
+left: 75px;
 
-  width: min(70vw, 1340px);
+  width: min(65vw, 1100px);
 
  
 }
