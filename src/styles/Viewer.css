@@ -549,7 +549,7 @@ button {
 ========================= */
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1800px) {
   .canvas-container {
   position: relative;
 
@@ -679,7 +679,7 @@ left: 40px;
 /* =========================
    RESPONSIVE MOBILE
 ========================= */
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
 
     .canvas-container {
     width: 80%;
