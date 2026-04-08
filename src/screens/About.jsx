@@ -61,7 +61,7 @@ export default function About({ language }) {
         <a href="https://www.linkedin.com/in/anamarquina21/">LinkedIn</a>
         </div>
         <div className="about-box-mail">
-          <p>a.marquinachanza@gmail.com</p>
+          <p>3D.a.mark@gmail.com</p>
         </div>
         </div>
       </div>
