@@ -679,7 +679,7 @@ left: 40px;
 /* =========================
    RESPONSIVE MOBILE
 ========================= */
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
 
     .canvas-container {
     width: 80%;
