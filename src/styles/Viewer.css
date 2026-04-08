@@ -15,6 +15,7 @@
   grid-template-columns: 1fr 260px;
   grid-template-rows: 1fr;
   height: 100vh;
+  pointer-events: none;
 
   background:
     radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4)),
@@ -421,6 +422,7 @@
 
   overflow: hidden;
    background-color: rgba(245, 245, 220, 0);
+   pointer-events: none;
 }
 
 .uv-sets-grid {
@@ -436,6 +438,7 @@
   height: 100%;
           background: rgba(2, 43, 43, 0.89);
   border: 0px solid rgba(0, 255, 255, 0.671);
+  pointer-events: none;
 
 }
 .uv-set-column {
@@ -445,10 +448,12 @@
   min-width: 200px;
         background: rgba(4, 112, 112, 0.432);
   border: 1px solid rgba(0,255,255,0.3);
+  pointer-events: auto;
 }
 .uv-maps-column {
   display: flex;
   flex-direction: row;
+  pointer-events: auto;
 
   gap: 6px;
 }
@@ -465,6 +470,7 @@
 
   cursor: pointer;
   transition: all 0.2s ease;
+  pointer-events: auto;
 }
 
 .uv-maps-column img:hover {

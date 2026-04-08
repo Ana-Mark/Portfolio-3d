@@ -4,41 +4,41 @@ import { MODELS } from "../data/modelsData"
 
 // Este componente muestra el título y descripción del modelo activo
 
-function ModelDescription({ activeModel }) {
+function ModelDescription({ activeModel, language }) {
 
-  // ==============================
-  // 📦 OBTENER MODELO ACTUAL
-  // ==============================
+
   const model = MODELS[activeModel]
 
-  // ==============================
-  // ❌ SI NO HAY MODELO → NO RENDER
-  // ==============================
   if (!model) return null
 
-  // ==============================
-  // 🎨 RENDER
-  // ==============================
+
+
   return (
     <>
     <div class="text-block">
       <div className="model-title">
-      <h1>{model.name}</h1>
+                <h1>
+            {typeof model.name === "object" 
+              ? model.name[language] 
+              : model.name}
+          </h1>
       </div>
 
       <div className="model-description">
-      <p>{model.description}</p>
+      <p>{model.description[language]}</p>
       </div>
       </div>
 <div class="link-block">
   <div className="software-title">
-    <p>Programs used:</p>
+          <p>
+            {language === "es" ? "Programas usados:" : "Programs used:"}
+          </p>
   </div>
 <div className="links">
   {model.links?.map((link) => (
-    <a key={link.url} href={link.url} target="_blank">
-      {link.label}
-    </a>
+            <a key={link.url} href={link.url} target="_blank">
+              {link.label}
+            </a>
   ))}
 </div>
 </div>

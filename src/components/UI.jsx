@@ -14,7 +14,8 @@ function UI({
   activeAsset,
   setActiveAsset,
   activeMaps,
-  setActiveMaps
+  setActiveMaps,
+  language
  }) {
 
 
@@ -25,7 +26,10 @@ function UI({
    return (
      <div className="ui-models">
 
-      <ModelDescription activeModel={activeModel} />
+      <ModelDescription 
+  activeModel={activeModel} 
+  language={language}
+/>
       <ModelSoftware activeModel={activeModel} />
       
        
@@ -67,7 +71,7 @@ function UI({
          <div className="assets-canvas">
                 <div className="Assets-title-parent">
   <div className="Assets-title">
-    <p>Assets and Textures</p>
+    <p>{language === "es" ? "Texturas y Assets" : "Assets and Textures"}</p>
   </div>
   </div>
 
@@ -79,7 +83,7 @@ function UI({
   className={activeAsset === "modular" ? "active" : ""}
   onClick={() => setActiveAsset("modular")}
 >
-  Modular Assets
+  {language === "es" ? "Assets Modulares" : "Modular Assets"}
 </button>
 
 
@@ -97,7 +101,7 @@ function UI({
           className={activeAsset === "tileable" ? "active" : ""}
           onClick={() => setActiveAsset("tileable")}
         >
-          Tile Textures
+          {language === "es" ? "Texturas Tileables" : "Tile Textures"}
         </button>
     
 

@@ -1,32 +1,43 @@
 import "../styles/MainMenu.css";
+import { Globe } from "lucide-react";
 
 
-export default function MainMenu({ setScreen, screen }) {
+export default function MainMenu({ setScreen, screen, language, setLanguage }) {
+
+    const toggleLanguage = () => {
+    setLanguage(prev => prev === "es" ? "en" : "es")
+  }
   
   return (
     
     <div className="main-menu">
+
+      {/* 🔥 BOTÓN IDIOMA */}
+<button className="lang-btn" onClick={toggleLanguage}>
+<Globe size={16} />
+{language === "es" ? "ES" : "EN"}
+</button>
       
 
 <button
   className={screen === "presentation" ? "active" : "inactive"}
   onClick={() => setScreen("presentation")}
 >
-  Home
+  {language === "es" ? "Inicio" : "Home"}
 </button>
 
 <button
   className={screen === "selector" ? "active" : "inactive"}
   onClick={() => setScreen("selector")}
 >
-  Work
+  {language === "es" ? "Trabajo" : "Work"}
 </button>
 
 <button
   className={screen === "about" ? "active" : "inactive"}
   onClick={() => setScreen("about")}
 >
-  About me
+  {language === "es" ? "Sobre mi" : "About Me"}
 </button>
 
       <button onClick={() => {

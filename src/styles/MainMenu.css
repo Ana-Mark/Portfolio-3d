@@ -70,3 +70,21 @@
   box-shadow: 0 0 10px rgba(0,255,255,0.25);
 }
 
+
+
+.main-menu button.lang-btn {
+  background: rgba(255, 69, 177, 0.1);
+  border: 1px solid rgba(255, 0, 150, 0.4);
+  color: #ffceef;
+}
+
+.main-menu button.lang-btn::after {
+  background: #ff4dc4;
+}
+
+.main-menu button.lang-btn:hover {
+  background: rgba(255, 0, 150, 0.25);
+  border-color: #ff4dc4;
+
+  box-shadow: 0 0 10px rgba(255, 0, 150, 0.4);
+}

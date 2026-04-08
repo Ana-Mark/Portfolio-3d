@@ -18,11 +18,18 @@ export const MODELS = [
     path: "/models/Weapon_Portfolio_04.glb",
 
     // Texto descriptivo
-    description: `3D Hard Surface Asset, a recreation of the M-240B weapon.
-    
+    description: {
+      en:`Hard Surface 3D asset, a recreation of the M-240B weapon.
+      
     Focused on clean topology and optimization of multiple UV Sets.
     
     Modeled using Blender, Plasticity, and ZBrush.`,
+    es:`3D Hard Surface Asset, una recreación del arma M-240B.
+    
+    Me he centrado en una topología limpia y optimización de múltiples sets de UV.
+    
+    Modelado realizado en Blender, Plasticity y ZBrush.`
+    },
 
      links: [
     {
@@ -67,9 +74,16 @@ lights: [
     name: "Zippo Lighter",
     path: "/models/Zippo_Portfolio_01.glb",
 
-    description: `3D asset inspired by the classic poker theme.
+    description:{
+      en:`3D asset inspired by a classic poker theme.
     
-    Focused on clean topology and realistic metallic textures and wear`,
+    Focused on clean topology and realistic metallic materials, including wear and surface detail.`,
+    es:`Asset 3D inspirado en una temática clásica de póker.
+    
+    Me he centrado en una topología limpia y en materiales metálicos realistas, incluyendo desgastes y detalles superficiales.`
+
+
+    },
 
     links: [
     {
@@ -110,10 +124,19 @@ lights: [
     name: `Modular Environment`,
     path: "/models/VendingMachine.glb",
 
-    description: `Modular environment based on the "Ho-Oh Club" - Cyberpunk.
-    Focused on the use of modular assets for an optimized environment.
+    description: {
+      en:`Modular environment based on the "Ho-Oh Club" - Cyberpunk.
+    Focused on the use of modular assets to createan optimized and reusable environment.
     
     Textures and lighting created using Unreal Engine, Substance Painter, and Substance Designer. `,
+    es: `Entorno modular basado en el "Ho-Oh Club" - Cyberpunk.
+    Me he centrado en el uso de assets modulares para para crear un entorno optimizado y reutilizable.
+    
+    Texturas e Iluminación creadas en Unreal Engine, Substance Painter y Substance Designer.`
+
+
+
+    },
 
     // 👇 ahora el vídeo también vive aquí
     video: "/videos/Video_Modular - Trim.mp4",
@@ -170,12 +193,22 @@ lights: [
     name: "Perth",
     path: "/models/Calendar.glb",
 
-    description: ` Work in progress.
+    description:{
+      en:` Work in progress.
 
     I am currently working on this piece.
-    It is a recreation of a handmade clock by the artist Eric Freitas.
+    This piece is a recreation of the handmade clock "Perth", made by the artist Eric Freitas.
     
     Focused on realistic modeling of a clock mechanism, including all its components`,
+    es: `Trabajo en progreso.
+    
+    Actualmente estoy trabajando en esta pieza.
+    Esta pieza es una recreación del reloj artesanal "Perth", hecho por el artista Eric Freitas.
+    
+    Me he centrado en un modelado realista del mecanismo del reloj, incluyendo todos sus componentes.`
+
+
+    },
 
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },

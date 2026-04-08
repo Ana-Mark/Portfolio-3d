@@ -11,7 +11,7 @@ import RenderOverlay from "../screens/RenderOverlay.jsx";
 import VideoOverlay from "../components/VideoOverlay.jsx";
 import { MODELS } from "../data/modelsData";
 
-export default function Viewer({ setScreen, selectedModel }) {
+export default function Viewer({ setScreen, selectedModel, language}) {
 
     // 🔥 ESTADO PRINCIPAL
   //const [activeModel, setActiveModel] = useState(selectedModel);
@@ -304,6 +304,7 @@ const triggerLoading = () => {
        activeMaps={activeMaps}
        setActiveMaps={setActiveMaps}
        setScreen={setScreen}
+       language={language}
        
       />
 
