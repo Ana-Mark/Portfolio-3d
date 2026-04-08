@@ -783,18 +783,26 @@ button {
   .text-block {
   position: absolute;
 
-  top: 70px;
+  top: 30px;
   right: 0px;
 
   width: min(350px, 35vw);
 
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
 
   padding: 20px;
 
   background-color: rgba(0, 255, 255, 0)
+}
+.model-title {
+  
+  color: aliceblue;
+  font-size: clamp(18px, 1vw, 24px);
+  white-space: pre-line;
+
+
 }
  
 .right-ui {
@@ -819,7 +827,7 @@ button {
 }
 .link-block {
   position: fixed;
-  top: 55%;
+  top: 65%;
   right: -3%;
 
   width: min(450px, 30vw);
@@ -827,7 +835,7 @@ button {
 }
 .software-block {
   position: fixed;
-  top: 60%;
+  top: 70%;
   right: 0%;
 
   width: min(355px, 30vw);
@@ -837,21 +845,36 @@ button {
 
 
   
-  height: 30%;
+  height: 35%;
+  width: 75%;
+  justify-content: flex-start;
   padding: 20px;
 
 
 }
 .uv-maps-column img {
-  width: clamp(120px, 12vw, 120px);
+  width: clamp(100px, 12vw, 100px);
  
 }
 .assets-canvas{
-
+  top: 70px;
+height: 85%;
+left: 40px;
 
   width: min(70vw, 1340px);
 
  
+}
+.Assets-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 19%;
+
+  top: 28%;
+
+
 }
 
 
