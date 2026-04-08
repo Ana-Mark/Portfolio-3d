@@ -545,9 +545,141 @@ button {
 }
 
 /* =========================
+   RESPONSIVE SMALL LAPTOP
+========================= */
+
+
+@media (max-width: 1400px) {
+  .canvas-container {
+  position: relative;
+
+  width: 85%;
+  height: 100%;
+
+  top: 3%;
+  right: 3%;
+
+  
+  max-height: 85vh;
+
+  margin: auto;
+
+  background-color: #0e0e1d;
+  border: 3px solid rgba(0, 255, 255, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .text-block {
+  position: absolute;
+
+  top: 30px;
+  right: 0px;
+
+  width: min(350px, 35vw);
+
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0)
+}
+.model-title {
+  
+  color: aliceblue;
+  font-size: clamp(18px, 1vw, 24px);
+  white-space: pre-line;
+
+
+}
+ 
+.right-ui {
+  position: absolute;
+  right: 270PX;
+
+
+
+ 
+
+   width: 100px;
+  height: auto;
+
+  background-color: rgba(0, 255, 255, 0);
+
+  display: flex;
+  flex-direction: column;
+  
+
+  padding: 25px;
+  gap: 20px;
+}
+.link-block {
+  position: fixed;
+  top: 65%;
+  right: -3%;
+
+  width: min(450px, 30vw);
+
+}
+.software-block {
+  position: fixed;
+  top: 70%;
+  right: 0%;
+
+  width: min(355px, 30vw);
+
+}
+.bottom-textures {
+
+
+  
+  height: 35%;
+  width: 75%;
+  justify-content: flex-start;
+  padding: 20px;
+
+
+}
+.uv-maps-column img {
+  width: clamp(100px, 12vw, 100px);
+ 
+}
+.assets-canvas{
+  top: 70px;
+height: 85%;
+left: 40px;
+
+  width: min(70vw, 1340px);
+
+ 
+}
+.Assets-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 19%;
+
+  top: 28%;
+
+
+}
+
+
+
+ 
+
+
+}
+
+/* =========================
    RESPONSIVE MOBILE
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
 
     .canvas-container {
     width: 80%;
@@ -757,129 +889,3 @@ button {
 }
 
 
-@media (max-width: 1400px) {
-  .canvas-container {
-  position: relative;
-
-  width: 85%;
-  height: 100%;
-
-  top: 3%;
-  right: 3%;
-
-  
-  max-height: 85vh;
-
-  margin: auto;
-
-  background-color: #0e0e1d;
-  border: 3px solid rgba(0, 255, 255, 0.15);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-  .text-block {
-  position: absolute;
-
-  top: 30px;
-  right: 0px;
-
-  width: min(350px, 35vw);
-
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-
-  padding: 20px;
-
-  background-color: rgba(0, 255, 255, 0)
-}
-.model-title {
-  
-  color: aliceblue;
-  font-size: clamp(18px, 1vw, 24px);
-  white-space: pre-line;
-
-
-}
- 
-.right-ui {
-  position: absolute;
-  right: 270PX;
-
-
-
- 
-
-   width: 100px;
-  height: auto;
-
-  background-color: rgba(0, 255, 255, 0);
-
-  display: flex;
-  flex-direction: column;
-  
-
-  padding: 25px;
-  gap: 20px;
-}
-.link-block {
-  position: fixed;
-  top: 65%;
-  right: -3%;
-
-  width: min(450px, 30vw);
-
-}
-.software-block {
-  position: fixed;
-  top: 70%;
-  right: 0%;
-
-  width: min(355px, 30vw);
-
-}
-.bottom-textures {
-
-
-  
-  height: 35%;
-  width: 75%;
-  justify-content: flex-start;
-  padding: 20px;
-
-
-}
-.uv-maps-column img {
-  width: clamp(100px, 12vw, 100px);
- 
-}
-.assets-canvas{
-  top: 70px;
-height: 85%;
-left: 40px;
-
-  width: min(70vw, 1340px);
-
- 
-}
-.Assets-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 19%;
-
-  top: 28%;
-
-
-}
-
-
-
- 
-
-
-}
