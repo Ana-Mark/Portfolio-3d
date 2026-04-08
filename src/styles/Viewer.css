@@ -760,7 +760,7 @@ button {
 @media (max-width: 1200px) {
 
   .text-block {
-    width: 40vw;
+    width: 10vw;
     width: min(200px, 35vw);
   }
   .model-title {
