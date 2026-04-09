@@ -291,7 +291,7 @@
   justify-content: center;
   width: 20%;
   height: 6%;
-  margin-top: -50px;
+  margin-top: 100px;
   right: 2%;
   background: linear-gradient(
     to bottom,
@@ -544,8 +544,37 @@ button {
   to { transform: rotate(360deg); }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
-   RESPONSIVE SMALL LAPTOP
+   RESPONSIVE  LAPTOP
 ========================= */
 
 
@@ -586,7 +615,7 @@ button {
 
   width: 20%;
  
-  top: 20%;
+  margin-top: -60px;
  
 
 }
@@ -688,12 +717,322 @@ left: 75px;
 
 }
 
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE  SMALL LAPTOP
+========================= */
+ 
+
+@media (max-width: 1400px) {
+  .canvas-container {
+  position: relative;
+
+  width: 85%;
+  height: 100%;
+
+  top: 3%;
+  right: 3%;
+
+  
+  max-height: 85vh;
+
+  margin: auto;
+
+  background-color: #0e0e1d;
+  border: 3px solid rgba(0, 255, 255, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Textures-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 23%;
+  height: 6%;
+  top: 15%;
+  right: 2%;
+  
+}
+.Assets-title-parent {
+
+  width: 20%;
+ 
+  margin-top: -60px;
+ 
+
+}
+
+  .text-block {
+  position: absolute;
+
+  top: 30px;
+  right: 0px;
+
+  width: min(350px, 35vw);
+
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0)
+}
+.model-title {
+  
+  color: aliceblue;
+  font-size: clamp(18px, 1vw, 24px);
+  white-space: pre-line;
+
+
+}
+ 
+.right-ui {
+  position: absolute;
+  right: 270PX;
+
 
 
  
 
+   width: 100px;
+  height: auto;
+
+  background-color: rgba(0, 255, 255, 0);
+
+  display: flex;
+  flex-direction: column;
+  
+
+  padding: 25px;
+  gap: 20px;
+}
+.link-block {
+  position: fixed;
+  top: 65%;
+  right: -3%;
+
+  width: min(450px, 30vw);
 
 }
+.software-block {
+  position: fixed;
+  top: 70%;
+  right: 0%;
+
+  width: min(355px, 30vw);
+
+}
+.bottom-textures {
+
+
+  
+  height: 35%;
+  width: 75%;
+  justify-content: flex-start;
+  padding: 20px;
+
+
+}
+.uv-maps-column img {
+  width: clamp(100px, 12vw, 100px);
+ 
+}
+.assets-canvas{
+  position: fixed;
+
+  top: 70px;
+  height: 80%;
+
+  left: 35%;
+  transform: translateX(-50%);
+
+  width: clamp(500px, 60vw, 1200px);
+}
+.Assets-title-parent {
+ 
+  
+ left: 90%;
+  width: 40%;
+
+  top: 28%;
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .canvas-container {
+  position: relative;
+
+  width: 85%;
+  height: 100%;
+
+  top: 3%;
+  right: 3%;
+
+  
+  max-height: 85vh;
+
+  margin: auto;
+
+  background-color: #0e0e1d;
+  border: 3px solid rgba(0, 255, 255, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Textures-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 23%;
+  height: 6%;
+  top: 15%;
+  right: 2%;
+  
+}
+.Assets-title-parent {
+
+  width: 20%;
+ 
+  top: 20%;
+ 
+
+}
+
+  .text-block {
+  position: absolute;
+
+  top: 30px;
+  left: 68%;
+
+  width: min(350px, 35vw);
+
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  padding: 20px;
+
+  background-color: rgba(0, 255, 255, 0)
+}
+.model-title {
+  
+  color: aliceblue;
+  font-size: clamp(15px, 1vw, 24px);
+  white-space: pre-line;
+
+
+}
+.model-description {
+
+
+  margin-left: 30px;
+}
+ 
+.right-ui {
+  position: absolute;
+  right: 250PX;
+   width: 30px;
+
+  padding: 0px;
+  
+}
+.link-block {
+  position: fixed;
+  top: 65%;
+  right: -3%;
+
+  width: min(450px, 30vw);
+
+}
+.software-block {
+  position: fixed;
+  top: 70%;
+  right: 0%;
+
+  width: min(355px, 30vw);
+
+}
+.bottom-textures {
+
+
+  
+  height: 35%;
+  width: 75%;
+  justify-content: flex-start;
+  padding: 20px;
+
+
+}
+.uv-maps-column img {
+  width: clamp(100px, 12vw, 100px);
+ 
+}
+.assets-canvas{
+  top: 70px;
+height: 85%;
+
+
+  width: min(65vw, 1100px);
+
+ 
+}
+.Assets-title-parent {
+  position: fixed;
+     display: flex;
+  
+  justify-content: center;
+  width: 19%;
+
+  top: 28%;
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+
 
 /* =========================
    RESPONSIVE MOBILE

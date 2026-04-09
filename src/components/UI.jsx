@@ -16,21 +16,22 @@ function UI({
   activeMaps,
   setActiveMaps,
   language
- }) {
+}) {
 
 
 
 
-   if (activeModel === null) return null;
+  if (activeModel === null) return null;
 
    return (
      <div className="ui-models">
 
-      <ModelDescription 
-  activeModel={activeModel} 
-  language={language}
-/>
-      <ModelSoftware activeModel={activeModel} />
+       <ModelDescription 
+         activeModel={activeModel} 
+         language={language}
+        />
+
+       <ModelSoftware activeModel={activeModel} />
       
        
        <ModelUI
@@ -39,25 +40,23 @@ function UI({
          setActiveSection={setActiveSection}
        />
 
+
+
+       {/*UV CONTAINER ========================================*/}
        {activeSection === "uv" && activeModel !== 2 && (
+
          <div className="bottom-textures-parent">
-  <div className="bottom-textures">
-    <UVGallery
-      activeMaps={activeMaps}
-      setActiveMaps={setActiveMaps}
-      activeModel={activeModel}
-    />
+           <div className="bottom-textures">
+             <UVGallery
+               activeMaps={activeMaps}
+               setActiveMaps={setActiveMaps}
+               activeModel={activeModel}
+             />
 
-  </div>
-  </div>
+            </div>
+          </div>
   
-)}
-
-
-
-
-
-
+        )}
 
 
 
@@ -65,78 +64,78 @@ function UI({
 
 
         
-
+        {/*ASSETS IMG CONTAINER ========================================*/}
         {activeSection === "assets" && (
           <div className="assets-canvas-parent">
-         <div className="assets-canvas">
-                <div className="Assets-title-parent">
-  <div className="Assets-title">
-    <p>{language === "es" ? "Texturas y Assets" : "Assets and Textures"}</p>
-  </div>
-  </div>
-
-           {/* BOTONES */}
-            <div className="assets-buttons">
-
-
-<button
-  className={activeAsset === "modular" ? "active" : ""}
-  onClick={() => setActiveAsset("modular")}
->
-  {language === "es" ? "Assets Modulares" : "Modular Assets"}
-</button>
+            <div className="assets-canvas">
 
 
 
+              {/*ASSETS AND TEXTURES - TITLE */}
+              <div className="Assets-title-parent">
+               <div className="Assets-title">
+                 <p>{language === "es" ? "Texturas y Assets" : "Assets and Textures"}</p>
+               </div>
+             </div>
+
+
+             {/* BOTONES - MODULAR - TILEABLE - HERO */}
+             <div className="assets-buttons">
+
+               <button
+                 className={activeAsset === "modular" ? "active" : ""}
+                 onClick={() => setActiveAsset("modular")}
+                 >
+                 {language === "es" ? "Assets Modulares" : "Modular Assets"}
+                </button>
 
      
-        <button
-          className={activeAsset === "heroUV" ? "active" : ""}
-          onClick={() => setActiveAsset("heroUV")}
-        >
-          Hero Asset
-        </button>
+                <button
+                 className={activeAsset === "heroUV" ? "active" : ""}
+                 onClick={() => setActiveAsset("heroUV")}
+                 >
+                 Hero Asset
+                </button>
 
-        <button
-          className={activeAsset === "tileable" ? "active" : ""}
-          onClick={() => setActiveAsset("tileable")}
-        >
-          {language === "es" ? "Texturas Tileables" : "Tile Textures"}
-        </button>
+                <button
+                 className={activeAsset === "tileable" ? "active" : ""}
+                 onClick={() => setActiveAsset("tileable")}
+                 >
+                 {language === "es" ? "Texturas Tileables" : "Tile Textures"}
+                </button>
     
 
-           </div>
-
-           {/* CONTENIDO */}
+              </div>
 
 
-            {activeAsset === "modular" && (
-             <div className="assets-view">
-               <img src="/Textures/Renders/ModularAssets_01.jpeg" />
-               <img src="/Textures/Renders/ModularAssets_02.jpeg" />
-             </div>
-            )}
 
-                 {activeAsset === "heroUV" && (
-        <div className="assets-view">
-          <img src="/Textures/Renders/4 - Texture Sets.png" />
-          
-        </div>
-      )}
+             {/* ASSETS IMG CONTAINER */}
+             {activeAsset === "modular" && (
+               <div className="assets-view">
+                 <img src="/Textures/Renders/ModularAssets_01.jpeg" />
+                 <img src="/Textures/Renders/ModularAssets_02.jpeg" />
+               </div>
+              )}
 
-      {activeAsset === "tileable" && (
-        <div className="assets-view">
-          <img src="/Textures/Renders/TileableTextures_01.jpg" />
-        </div>
-      )}
+              {activeAsset === "heroUV" && (
+               <div className="assets-view">
+                 <img src="/Textures/Renders/4 - Texture Sets.png" />
+               </div>
+              )}
 
-          </div>
-          </div>
+             {activeAsset === "tileable" && (
+               <div className="assets-view">
+                 <img src="/Textures/Renders/TileableTextures_01.jpg" />
+               </div>
+              )}
+
+            </div>
+         </div>
         )}
 
       </div>
     );
-  }
+}
 
 
 export default UI 

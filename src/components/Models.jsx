@@ -115,7 +115,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
     tex.needsUpdate = true
   })
-})
+ })
 
   
 
@@ -126,7 +126,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
   const center = box.getCenter(new THREE.Vector3())
 
   gltf.scene.position.sub(center)
-}, [gltf])
+ }, [gltf])
 
 
 

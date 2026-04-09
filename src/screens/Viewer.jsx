@@ -11,30 +11,20 @@ import RenderOverlay from "../screens/RenderOverlay.jsx";
 import VideoOverlay from "../components/VideoOverlay.jsx";
 import { MODELS } from "../data/modelsData";
 
+
+
 export default function Viewer({ setScreen, selectedModel, language}) {
 
-    // 🔥 ESTADO PRINCIPAL
-  //const [activeModel, setActiveModel] = useState(selectedModel);
+
   const [activeModel] = useState(selectedModel);
-  
   const [activeSection, setActiveSection] = useState(
    selectedModel === 2 ? "video" : "description"
   );
   const [activeAsset, setActiveAsset] = useState(null);
-
-
   const [activeMaps, setActiveMaps] = useState({});
-
   const [controls, setControls] = useState(null);
 
- 
-
-
-
-
-  
-
-const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   
 
@@ -43,10 +33,10 @@ const [isLoading, setIsLoading] = useState(true)
 
 
   //TEXTURAS ACTIVAS AL ENTRAR //
-useEffect(() => {
+ useEffect(() => {
   if (activeModel === null) return
 
-  const textureSets = [
+   const textureSets = [
     ["barrelBC","barrelN","barrelAORM","bodyBC","bodyN","bodyAORM","buttBC","buttN","buttAORM"],
     ["zippoBC","zippoN","zippoAORM"],
     [
@@ -55,76 +45,70 @@ useEffect(() => {
       "VMmtaBC","VMmtaN","VMmtaAORM",
       "VMmtbBC","VMmtbN","VMmtbAORM"
     ]
-  ]
+   ]
 
-  const maps = {}
+   const maps = {}
 
-  textureSets[activeModel]?.forEach(map => {
+   textureSets[activeModel]?.forEach(map => {
     maps[map] = true
-  })
+   })
 
-  setActiveMaps(maps) // 🔥 FALTABA ESTO
+    setActiveMaps(maps) // 🔥 FALTABA ESTO
 
-}, [activeModel])
-
-
+ }, [activeModel])
 
 
 
+ //AJUSTE CAMARA //
+ useEffect(() => {
+   if (!controls) return
 
-useEffect(() => {
-  if (!controls) return
+   const camera = controls.object
+   const currentModel = MODELS[activeModel]
 
-  const camera = controls.object
-  const currentModel = MODELS[activeModel]
+   let config = currentModel.camera?.default
+   /*
+   if (activeModel === 2 && activeSection === "uv" ) {
+     config = currentModel.camera?.heroUV
+   }
 
-  let config = currentModel.camera?.default
+   if (activeModel === 2 && activeSection === "assets") {
+     config = currentModel.camera?.assets
+   }
+   */
+   if (!config) return
 
-  if (activeModel === 2 && activeSection === "uv" ) {
-    config = currentModel.camera?.heroUV
-  }
+   controls.reset()
 
-  if (activeModel === 2 && activeSection === "assets") {
-    config = currentModel.camera?.assets
-  }
+   camera.position.set(...config.position)
+   controls.target.set(...config.target)
 
-  if (!config) return
-
-  controls.reset()
-
-  camera.position.set(...config.position)
-  controls.target.set(...config.target)
-
-  controls.update()
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [controls, activeModel, activeSection, ])
-
-
+   controls.update()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [controls, activeModel, activeSection, ])
 
 
 
+ //APERTURA IMAGENES MODULAR //
+ useEffect(() => {
+   if (activeModel !== 2) return
 
-
-useEffect(() => {
-  if (activeModel !== 2) return
-
-  if (activeSection === "assets") {
+   if (activeSection === "assets") {
     setActiveAsset("modular")
-  }
-}, [activeSection, activeModel])
+   }
+ }, [activeSection, activeModel])
 
-useEffect(() => {
-  triggerLoading()
-}, [activeModel])
-
-
-
+ //LOADING //
+ useEffect(() => {
+   triggerLoading()
+ }, [activeModel])
 
 
 
+ //CONSOLE MARCA POSITION CAMARA //
+ /*
 
-
-useEffect(() => {
+ useEffect(() => {
   const handleKey = (e) => {
     if (e.key !== "c") return
     if (!controls) return
@@ -137,138 +121,129 @@ useEffect(() => {
     }
 
     console.log("📸 CAMERA SNAPSHOT:", data)
-  }
+   }
 
-  window.addEventListener("keydown", handleKey)
-  return () => window.removeEventListener("keydown", handleKey)
-}, [controls])
-
-
-
+   window.addEventListener("keydown", handleKey)
+   return () => window.removeEventListener("keydown", handleKey)
+  }, [controls])
+ */
 
 
+ //CONST LOADING //
 
+ const triggerLoading = () => {
+   setIsLoading(true)
 
-const triggerLoading = () => {
-  setIsLoading(true)
-
-  setTimeout(() => {
+   setTimeout(() => {
     setIsLoading(false)
   }, 700)
-}
+ }
 
 
 
 
-
+ //CANVAS =================================================== //
   return (
     
     
     <div className="app-container">
 
       {/* ================= CANVAS ================= */}
+
+
       {/*3D MODEL CONTAINER */}
-      <div className="canvas-container">
+      {activeModel !== 2 && (
+       <div className="canvas-container">
+
+         {/*LOADER ANIMATIC */}
+         {isLoading && (
+           <div className="global-loader">
+
+             <div className="spinner"></div>
+               Loading...
+           </div>
+          )}
+
+
+
+
+
+
+         <Canvas
+           key={activeModel + activeSection }
+           camera={{ near: 0.01, far: 1000 }}
+           >
+
+
+           {MODELS[activeModel].lights?.map((light, i) => {
+             if (light.type === "ambient") {
+
+               return (
+                 <ambientLight
+                   key={i}
+                   intensity={light.intensity}
+                   color={light.color || "#ffffff"}
+                  />
+                )
+              }
+
+             if (light.type === "directional") {
         
-{isLoading && (
-  <div className="global-loader">
-    <div className="spinner"></div>
-    Loading...
-  </div>
-)}
+               return (
+                 <directionalLight
+                   key={i}
+                   position={light.position}
+                   intensity={light.intensity}
+                   color={light.color || "#ffffff"}
+                  />
+                )
+              }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       <Canvas
-         key={activeModel + activeSection }
-         camera={{ near: 0.01, far: 1000 }}
-        >
-
-
-{MODELS[activeModel].lights?.map((light, i) => {
-  if (light.type === "ambient") {
-    return (
-      <ambientLight
-        key={i}
-        intensity={light.intensity}
-        color={light.color || "#ffffff"}
-      />
-    )
-  }
-
-  if (light.type === "directional") {
-    return (
-      <directionalLight
-        key={i}
-        position={light.position}
-        intensity={light.intensity}
-        color={light.color || "#ffffff"}
-      />
-    )
-  }
-
-  if (light.type === "point") {
-    return (
-      <pointLight
-        key={i}
-        position={light.position}
-        intensity={light.intensity}
-        color={light.color || "#ffffff"}
-      />
-    )
-  }
-
-  return null
-})}
-
-
-
-
-
-
-<Suspense fallback={null}>
-  <Scene
-    activeModel={activeModel}
-    activeSection={activeSection}
-    activeMaps={activeMaps}
-    activeAsset={activeAsset}
+             if (light.type === "point") {
     
-  />
-</Suspense>
+               return (
+                 <pointLight
+                   key={i}
+                   position={light.position}
+                   intensity={light.intensity}
+                   color={light.color || "#ffffff"}
+                 />
+                )
+              }
+
+             return null
+           })}
 
 
 
+            <Suspense fallback={null}>
+              <Scene
+               activeModel={activeModel}
+               activeSection={activeSection}
+               activeMaps={activeMaps}
+               activeAsset={activeAsset}
+    
+              />
+            </Suspense>
 
 
+            <OrbitControls
+              ref={setControls}
+              makeDefault
+              enablePan={true}
+              minDistance={0.1}
+              maxDistance={5}
+              enableDamping={false}
+            />
 
+         </Canvas>
 
+       </div>
+      )}
 
+  
 
-
-          <OrbitControls
-  ref={setControls}
-  makeDefault
-  enablePan={true}
-  minDistance={0.1}
-  maxDistance={5}
-   enableDamping={false}
-/>
-
-        </Canvas>
-
-      </div>
+      
 
       
 
@@ -296,7 +271,6 @@ const triggerLoading = () => {
       {/* ================= UI ================= */}
       <UI
        activeModel={activeModel}
-       //setActiveModel={setActiveModel}
        activeSection={activeSection}
        setActiveSection={setActiveSection}
        activeAsset={activeAsset}

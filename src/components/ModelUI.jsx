@@ -4,6 +4,9 @@ import ModelSoftware from "./ModelSoftware.jsx"
 import { MODELS } from "../data/modelsData"
 import { FileText, TextAlignJustify, Palette, Image, LayersPlus, Clapperboard} from "lucide-react"
 
+
+
+/*ICONOS ========================================*/
 const icons = {
   description: <TextAlignJustify size={20} color="white" />,
   uv: <Palette size={20} color="white" />,
@@ -12,20 +15,23 @@ const icons = {
   render: <Image size={20} color="white" />
 }
 
+
+
+
 function ModelUI({
   activeModel,
   activeSection,
   setActiveSection,
   
- }) {
+}) {
 
-   if (activeModel === null) return null
+  if (activeModel === null) return null
 
    return (
+    <div className="ui-wrapper">
      <div className="right-ui">
 
        
-
        {/* BOTONES DE SECCION */}
        <div className="icon-tabs">
          {MODELS[activeModel].sections.map(section => (
@@ -45,8 +51,9 @@ function ModelUI({
 
 
      </div>
+     </div>
     )
-  }
+}
 
   export default ModelUI
 
