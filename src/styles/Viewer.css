@@ -666,679 +666,198 @@ button {
 
 
 
+@media (max-width: 768px) {
 
+  /* =========================
+     APP ROOT
+  ========================= */
+.app-container {
+  display: flex;
+  flex-direction: column;
 
-/* =========================
-   RESPONSIVE  LAPTOP
-========================= 
+  height: 100dvh;
+  overflow: hidden;
 
-
-@media (max-width: 1800px) {
+  padding: 60px 10px 10px 10px;
+}
+  /* =========================
+     3D VIEWPORT
+  ========================= */
   .canvas-container {
-  position: relative;
+  width: 100%;
+  height: 45vh;
 
-  width: 85%;
-  height: 100%;
-
-  top: 3%;
-  right: 3%;
-
-  
-  max-height: 85vh;
-
-  margin: auto;
-
-  background-color: #0e0e1d;
-  border: 3px solid rgba(0, 255, 255, 0.15);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Textures-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 23%;
-  height: 6%;
-  top: 15%;
-  right: 2%;
-  
-}
-.Assets-title-parent {
-
-  width: 20%;
- 
-  margin-top: -60px;
- 
-
+  flex-shrink: 0;
 }
 
-  .text-block {
-  position: absolute;
-
-  top: 30px;
-  right: 0px;
-
-  width: min(350px, 35vw);
-
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-
-  padding: 20px;
-
-  background-color: rgba(0, 255, 255, 0)
-}
-.model-title {
-  
-  color: aliceblue;
-  font-size: clamp(18px, 1vw, 24px);
-  white-space: pre-line;
-
-
-}
- 
+  /* =========================
+     RIGHT UI → ABAJO
+  ========================= */
 .right-ui {
-  position: absolute;
-  right: 270PX;
+  width: 100%;
 
+  height: 55vh;   /* 🔥 fijo estable en móvil */
 
-
- 
-
-   width: 100px;
-  height: auto;
-
-  background-color: rgba(0, 255, 255, 0);
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
-  
-
-  padding: 25px;
-  gap: 20px;
-}
-.link-block {
-  position: fixed;
-  top: 65%;
-  right: -3%;
-
-  width: min(450px, 30vw);
-
-}
-.software-block {
-  position: fixed;
-  top: 70%;
-  right: 0%;
-
-  width: min(355px, 30vw);
-
-}
-.bottom-textures {
-
-
-  
-  height: 35%;
-  width: 75%;
-  justify-content: flex-start;
-  padding: 20px;
-
-
-}
-.uv-maps-column img {
-  width: clamp(100px, 12vw, 100px);
- 
-}
-.assets-canvas{
-  top: 70px;
-height: 85%;
-left: 75px;
-
-  width: min(65vw, 1100px);
 
  
 }
-.Assets-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 19%;
-
-  top: 28%;
-
-
+.software-block{
+  opacity: 0;
 }
 
-}
+  /* =========================
+     UI MODELS GRID
+  ========================= */
+.ui-models {
+  display: flex;
+  flex-direction: column;
 
-
-
-
-
-
-
-
-
-
-/* =========================
-   RESPONSIVE  SMALL LAPTOP
-========================= 
- 
-
-@media (max-width: 1400px) {
-  .canvas-container {
-  position: relative;
-
-  width: 85%;
   height: 100%;
-
-  top: 3%;
-  right: 3%;
-
-  
-  max-height: 85vh;
-
-  margin: auto;
-
-  background-color: #0e0e1d;
-  border: 3px solid rgba(0, 255, 255, 0.15);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Textures-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 23%;
-  height: 6%;
-  top: 15%;
-  right: 2%;
-  
-}
-.Assets-title-parent {
-
-  width: 20%;
- 
-  margin-top: -60px;
- 
-
+  min-height: 0;
 }
 
-  .text-block {
-  position: absolute;
-
-  top: 30px;
-  right: 0px;
-
-  width: min(350px, 35vw);
-
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-
-  padding: 20px;
-
-  background-color: rgba(0, 255, 255, 0)
-}
-.model-title {
-  
-  color: aliceblue;
-  font-size: clamp(18px, 1vw, 24px);
-  white-space: pre-line;
-
-
-}
- 
-.right-ui {
-  position: absolute;
-  right: 270PX;
-
-
-
- 
-
-   width: 100px;
-  height: auto;
-
-  background-color: rgba(0, 255, 255, 0);
-
-  display: flex;
-  flex-direction: column;
-  
-
-  padding: 25px;
-  gap: 20px;
-}
-.link-block {
-  position: fixed;
-  top: 65%;
-  right: -3%;
-
-  width: min(450px, 30vw);
-
-}
-.software-block {
-  position: fixed;
-  top: 70%;
-  right: 0%;
-
-  width: min(355px, 30vw);
-
-}
-.bottom-textures {
-
-
-  
-  height: 35%;
-  width: 75%;
-  justify-content: flex-start;
-  padding: 20px;
-
-
-}
-.uv-maps-column img {
-  width: clamp(100px, 12vw, 100px);
- 
-}
-.assets-canvas{
-  position: fixed;
-
-  top: 70px;
-  height: 80%;
-
-  left: 35%;
-  transform: translateX(-50%);
-
-  width: clamp(500px, 60vw, 1200px);
-}
-.Assets-title-parent {
- 
-  
- left: 90%;
-  width: 40%;
-
-  top: 28%;
-
-
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   RESPONSIVE TABLET
-========================= 
-
-@media (max-width: 900px) {
-  .canvas-container {
-  position: relative;
-
-  width: 85%;
-  height: 100%;
-
-  top: 3%;
-  right: 3%;
-
-  
-  max-height: 85vh;
-
-  margin: auto;
-
-  background-color: #0e0e1d;
-  border: 3px solid rgba(0, 255, 255, 0.15);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Textures-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 23%;
-  height: 6%;
-  top: 15%;
-  right: 2%;
-  
-}
-.Assets-title-parent {
-
-  width: 20%;
- 
-  top: 20%;
- 
-
-}
-
-  .text-block {
-  position: absolute;
-
-  top: 30px;
-  left: 68%;
-
-  width: min(350px, 35vw);
-
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-
-  padding: 20px;
-
-  background-color: rgba(0, 255, 255, 0)
-}
-.model-title {
-  
-  color: aliceblue;
-  font-size: clamp(15px, 1vw, 24px);
-  white-space: pre-line;
-
-
-}
-.model-description {
-
-
-  margin-left: 30px;
-}
- 
-.right-ui {
-  position: absolute;
-  right: 250PX;
-   width: 30px;
-
-  padding: 0px;
-  
-}
-.link-block {
-  position: fixed;
-  top: 65%;
-  right: -3%;
-
-  width: min(450px, 30vw);
-
-}
-.software-block {
-  position: fixed;
-  top: 70%;
-  right: 0%;
-
-  width: min(355px, 30vw);
-
-}
-.bottom-textures {
-
-
-  
-  height: 35%;
-  width: 75%;
-  justify-content: flex-start;
-  padding: 20px;
-
-
-}
-.uv-maps-column img {
-  width: clamp(100px, 12vw, 100px);
- 
-}
-.assets-canvas{
-  top: 70px;
-height: 85%;
-
-
-  width: min(65vw, 1100px);
-
- 
-}
-.Assets-title-parent {
-  position: fixed;
-     display: flex;
-  
-  justify-content: center;
-  width: 19%;
-
-  top: 28%;
-
-
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   RESPONSIVE MOBILE
-========================= 
-@media (max-width: 600px) {
-
-    .canvas-container {
-    width: 80%;
-    height: 80%;
-    top: 40%;
-    left: 0%;
-
-    border: none;
-  }
-
-  .app-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 55% 45%;
-  }
-
-   .right-ui {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
-
-    width: 100%;
-    height: 50px;
-
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    gap: 15px;
-    padding: 10px;
-
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-  }
-
+  /* =========================
+     ICON TABS → HORIZONTAL
+  ========================= */
   .icon-tabs {
     flex-direction: row;
+    max-width: 100%;
     justify-content: center;
-    width: 100%;
+    gap: 8px;
   }
 
   .icon-tabs button {
-    width: 50px;
-    height: 30px;
+    min-height: 40px;
   }
 
-   .bottom-textures {
+  /* =========================
+     TEXT CONTENT
+  ========================= */
+  .model-title {
+    font-size: 15px;
     
-   display: flex;
-  justify-content: center; 
-  align-items: flex-end;
-
-  width: 100%;
-  height: 40%;
-
-  padding: 10px;
-  gap: 10px; 
-  }
-  .uv-sets-grid {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 50%;
-  margin-bottom: 50px;
- 
-  gap: 1px;
-  pointer-events: none;
-}
-
-.uv-set-column {
-  flex: 1; 
-
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-   overflow-y: auto;
-  
-  height: 80%;
-
-
-}
-.uv-set-column button {
-  flex: 1; 
-
-  display: flex;
-  overflow-y: auto;
- pointer-events: none;
-
-
-}
-
-.uv-maps-column {
-  display: flex;
-  overflow-y: auto;
-  
- 
-}
-
-.uv-maps-column img {
-  max-width: 100%;
-  min-width: 10%;
-  height: 100%;
-  overflow-y: auto;
-  
-  
-          
-   
-
- 
-}
-  .Assets-title-parent,
-  .Textures-title-parent {
-    display: none;
-  }
-  .text-block {
-    position: absolute;
-    top: 70px;
-    left: 10px;
-    right: 10px;
-    align-items: center;
-
-    width: auto;
-    gap: 20px;
-
-    padding: 10px;
   }
 
   .model-description {
-    margin-left: 0;
+    font-size: 13px;
   }
 
-  .link-block{
-  position: relative; 
-  
-  top: auto;
-  left: auto;
+  .software-title {
+    opacity: 0;
+    padding: 0px 100px;
+    font-size: 14px;
+  }
 
+  .links {
+    padding: 0px 100px ;
+    font-size: 13px;
+  }
+
+  /* =========================
+     ASSETS VIEW
+  ========================= */
+.assets-canvas {
   display: flex;
-   
-  
-  flex-direction: column; 
-  gap: 20px; 
-  }
-  .software-block {
+  flex-direction: column;
 
-  position: relative;
+  height: 100%;
+  min-height: 0;
+  gap: 10px;
+
+  
+}
+
+.assets-view {
+  flex: 1;
+  height: 100%;
+
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  gap: 5px;
+
+  padding: 20px 20px 20px 20px;
+}
+
+  .assets-view img {
+    min-height: auto;
+    display: flex;
+  }
+
+ .assets-buttons {
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 5px;
+}
+
+  .assets-buttons button {
+    padding: 6px 10px;
+  }
+
+  /* =========================
+     SOFTWARE ICONS
+  ========================= */
+  .software-inline img {
+    opacity: 0;
+    width: 28px;
+  }
+
+  /* =========================
+     UV / TEXTURES → SCROLL HORIZONTAL
+  ========================= */
+.uv-overlay {
+  position: relative;   /* 🔥 quitamos fixed */
+  bottom: auto;
+  right: auto;
 
   width: 100%;
   height: auto;
 
-  margin-top: 20px; 
-   
-  }
-  .software-title{
-  position: fixed;
-  bottom: 29%;
+  order: 2; /* 🔥 lo colocamos después del canvas */
 
-  }
-    .links{
-  position: fixed;
-  bottom: 29%;
-  right: 5%;
-  font-size: 12px;
-
-  }
-    .software-inline {
-     
-
-  
-    display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  gap: 10px;
-  }
-    .assets-canvas {
-    position: fixed;
-    top: 29%;
-    left: 0;
-
-    width: 100%;
-    height: 38%;
-  }
-
-  .assets-buttons {
-    position: fixed;
-    top: 73%;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .assets-view {
-    padding: 10px;
-    gap: 15px;
-  }
-
-  .assets-view img {
-    min-height: auto;
-    height: auto;
-  }
+  display: block;
+  margin: 10px 0;
 }
 
+/* contenedor interno */
+.bottom-textures-parent {
+  height: auto;
+}
 
+/* quitamos comportamiento de "pegado abajo" */
+.bottom-textures {
+  align-items: flex-start;
+  padding: 0;
+}
+
+/* scroll horizontal limpio */
+.uv-sets-grid {
+  display: flex;
+  flex-direction: row;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  gap: 10px;
+  padding: 10px;
+
+  border-radius: 8px;
+}
+
+/* columnas más compactas */
+.uv-set-column {
+  min-width: 120px;
+}
+
+/* imágenes más pequeñas */
+.uv-maps-column img {
+  width: 90px;
+}
+
+}
