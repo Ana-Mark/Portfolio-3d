@@ -41,7 +41,7 @@ export default function MainMenu({ setScreen, screen, language, setLanguage }) {
 </button>
 
       <button onClick={() => {
-        window.open("https://drive.google.com/file/d/1cx2UniLnJx46el4cFgHjW_2b252S1cLv/view?usp=sharing", "_blank");
+        window.open("https://drive.google.com/file/d/1t1AuHIH6Mo_zt6KmGM1ZS-UH64uPIxIw/view?usp=sharing", "_blank");
       }}>
         Portfolio PDF
       </button>

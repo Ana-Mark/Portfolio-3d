@@ -14,7 +14,8 @@ export const MODELS = [
   // 🔫 MODELO 0 - WEAPON
   // ==============================
   {
-    name: "Weapon . M-240B",
+    name: `Weapon 
+    M-240B`,
     path: "/models/Weapon_Portfolio_04.glb",
 
     // Texto descriptivo

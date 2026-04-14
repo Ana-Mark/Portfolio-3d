@@ -12,7 +12,7 @@ function ModelDescription({ activeModel, language }) {
 
   return (
     <>
-    <div class="text-block">
+    
 
       <div className="model-title">
                 <h1>
@@ -26,10 +26,10 @@ function ModelDescription({ activeModel, language }) {
       <p>{model.description[language]}</p>
       </div>
       
-    </div>
+    
 
 
-    <div class="link-block">
+    
 
      <div className="software-title">
        <p>
@@ -44,7 +44,7 @@ function ModelDescription({ activeModel, language }) {
           </a>
         ))}
       </div>
-    </div>
+    
    </>
   )
 }

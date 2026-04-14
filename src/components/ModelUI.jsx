@@ -28,11 +28,8 @@ function ModelUI({
   if (activeModel === null) return null
 
    return (
-    <div className="ui-wrapper">
-     <div className="right-ui">
-
        
-       {/* BOTONES DE SECCION */}
+       /* BOTONES DE SECCION */
        <div className="icon-tabs">
          {MODELS[activeModel].sections.map(section => (
 
@@ -50,8 +47,8 @@ function ModelUI({
 
 
 
-     </div>
-     </div>
+     
+     
     )
 }
 

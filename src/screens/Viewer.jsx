@@ -10,6 +10,7 @@ import UI from "../components/UI.jsx";
 import RenderOverlay from "../screens/RenderOverlay.jsx";
 import VideoOverlay from "../components/VideoOverlay.jsx";
 import { MODELS } from "../data/modelsData";
+import UVGallery from "../components/UVGallery.jsx";
 
 
 
@@ -150,9 +151,62 @@ export default function Viewer({ setScreen, selectedModel, language}) {
 
       {/* ================= CANVAS ================= */}
 
-
+      <div className="left-panel">
+        
       {/*3D MODEL CONTAINER */}
-      {activeModel !== 2 && (
+          {activeSection === "assets" ? (
+      <div className="assets-canvas">
+
+      <div className="Assets-title-parent">
+        <div className="Assets-title">
+          <p>{language === "es" ? "Texturas y Assets" : "Assets and Textures"}</p>
+        </div>
+      </div>
+
+      <div className="assets-buttons">
+        <button
+          className={activeAsset === "modular" ? "active" : ""}
+          onClick={() => setActiveAsset("modular")}
+        >
+          Modular Assets
+        </button>
+
+        <button
+          className={activeAsset === "heroUV" ? "active" : ""}
+          onClick={() => setActiveAsset("heroUV")}
+        >
+          Hero Asset
+        </button>
+
+        <button
+          className={activeAsset === "tileable" ? "active" : ""}
+          onClick={() => setActiveAsset("tileable")}
+        >
+          Tile Textures
+        </button>
+      </div>
+
+      {activeAsset === "modular" && (
+        <div className="assets-view">
+          <img src="/Textures/Renders/ModularAssets_01.jpeg" />
+          <img src="/Textures/Renders/ModularAssets_02.jpeg" />
+        </div>
+      )}
+
+      {activeAsset === "heroUV" && (
+        <div className="assets-view">
+          <img src="/Textures/Renders/4 - Texture Sets.png" />
+        </div>
+      )}
+
+      {activeAsset === "tileable" && (
+        <div className="assets-view">
+          <img src="/Textures/Renders/TileableTextures_01.jpg" />
+        </div>
+      )}
+
+    </div>
+    ) : (
        <div className="canvas-container">
 
          {/*LOADER ANIMATIC */}
@@ -240,6 +294,7 @@ export default function Viewer({ setScreen, selectedModel, language}) {
 
        </div>
       )}
+      </div>
 
   
 
@@ -269,6 +324,7 @@ export default function Viewer({ setScreen, selectedModel, language}) {
 
 
       {/* ================= UI ================= */}
+      <div className="right-ui">
       <UI
        activeModel={activeModel}
        activeSection={activeSection}
@@ -281,6 +337,26 @@ export default function Viewer({ setScreen, selectedModel, language}) {
        language={language}
        
       />
+      </div>
+
+      {/* ================= UV OVERLAY ================= */}
+{activeSection === "uv" && activeModel !== 2 && (
+  <div className="uv-overlay">
+    <UVGallery
+      activeMaps={activeMaps}
+      setActiveMaps={setActiveMaps}
+      activeModel={activeModel}
+    />
+  </div>
+)}
+
+{/* ================= ASSETS OVERLAY ================= */}
+{activeSection === "assets" && (
+  <div className="assets-overlay">
+
+    
+  </div>
+)}
 
       
 
