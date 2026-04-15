@@ -2,7 +2,7 @@
 
 import { MODELS } from "../data/modelsData"
 
-// Este componente muestra el título y descripción del modelo activo
+
 
 function ModelDescription({ activeModel, language }) {
 

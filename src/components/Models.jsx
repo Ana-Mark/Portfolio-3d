@@ -275,8 +275,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
    gltf.scene.traverse((child) => {
      if (!child.isMesh) return
 
-     //SABER EL NOMBRE DEL MATERIAL
-     //console.log("Material encontrado:", child.material.name)
+
 
       if (isTileable) {
       child.material.color.set(0xffffff)
@@ -402,7 +401,7 @@ function Model({ path, visible, animationOn, activeMaps, modelIndex}) {
 
 
 
-//PATH MODELO Y QUE HACE
+//PATH MODELO 
 function Models({ activeModel, animationOn, activeMaps,   }) {
 
 

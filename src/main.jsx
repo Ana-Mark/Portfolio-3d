@@ -1,4 +1,4 @@
-// Punto de entrada de la app React
+
 
 import React from "react"
 import ReactDOM from "react-dom/client"

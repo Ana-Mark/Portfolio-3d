@@ -5,18 +5,17 @@ import { MODELS } from "../data/modelsData"
 
 function SoftwareIcons({ activeModel, setActiveSoftware }) {
 
-  // ==============================
-  // 📦 OBTENER MODELO ACTUAL
-  // ==============================
+
+  // OBTENER MODELO ACTUAL
+
   const model = MODELS[activeModel]
   if (activeModel === null) return null
 
   // Si no hay modelo → array vacío
   const programs = model?.software || []
 
-  // ==============================
-  // 🎨 RENDER
-  // ==============================
+  
+  //  RENDER
   return (
     <div className="software-frame">
 

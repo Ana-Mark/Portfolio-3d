@@ -12,7 +12,7 @@ export default function MainMenu({ setScreen, screen, language, setLanguage }) {
     
     <div className="main-menu">
 
-      {/* 🔥 BOTÓN IDIOMA */}
+      {/*BOTÓN IDIOMA */}
 <button className="lang-btn" onClick={toggleLanguage}>
 <Globe size={16} />
 {language === "es" ? "ES" : "EN"}
@@ -41,7 +41,7 @@ export default function MainMenu({ setScreen, screen, language, setLanguage }) {
 </button>
 
       <button onClick={() => {
-        window.open("https://drive.google.com/file/d/1t1AuHIH6Mo_zt6KmGM1ZS-UH64uPIxIw/view?usp=sharing", "_blank");
+        window.open("https://drive.google.com/file/d/1IgE3NP_9ivXfF9lOGOBZ_CzZKUnWZgFi/view?usp=drive_link", "_blank");
       }}>
         Portfolio PDF
       </button>

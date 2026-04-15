@@ -1,5 +1,4 @@
-// Este componente muestra un vídeo en overlay
-// dependiendo del modelo activo
+
 
 function VideoOverlay({ activeModel, isVisible, MODELS, onClose }) {
   if (!isVisible || activeModel === null) return null;

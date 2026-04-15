@@ -31,7 +31,7 @@ export default function About({ language }) {
 
           <div className="about-box-inside-1">
              <p>2020-2022 </p>
-             <p>Grado superior. Animaciones 3D, Juegos y Entornos Interactivos</p>
+             <p>Grado superior. Animación 3D, Juegos y Entornos Interactivos</p>
              <p>(CEU Cardenal Herrera) </p>
           </div>
 
@@ -135,7 +135,7 @@ export default function About({ language }) {
 
 
 
-      {/* 🔥 EXTRA IMPORTANTE */}
+      
       <div className="about-box highlight">
         <div className="about-box-title">
         <h1>{language === "es" ? "Qué ofrezco" : "What I Bring"}</h1>

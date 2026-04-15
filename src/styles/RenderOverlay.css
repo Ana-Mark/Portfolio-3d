@@ -96,13 +96,13 @@ video {
   /* IMÁGENES */
   .render-scroll img {
     width: 100%;
-    height: auto; /* 🔥 clave */
+    height: auto; 
     margin-top: 10px;
   }
 
-  /* BOTÓN CERRAR (mucho más usable) */
+  /* BOTÓN CERRAR*/
   .close-btn {
-    position: fixed; /* 🔥 importante */
+    position: fixed; 
     top: 70px;
     right: 10px;
 

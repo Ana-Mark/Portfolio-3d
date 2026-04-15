@@ -25,7 +25,7 @@
 }
 
 /* =========================
-   GRID PERSPECTIVE BACKGROUND
+   GRID BACKGROUND
 ========================= */
 
 .about-container::before {
@@ -59,7 +59,7 @@
 }
 
 /* =========================
-   NOISE / SCANLINES OVERLAY
+   NOISE OVERLAY
 ========================= */
 
 .about-container::after {
@@ -282,13 +282,13 @@
 
 @media (max-width: 768px) {
    .about-container {
-    grid-template-columns: 1fr; /* 🔥 UNA COLUMNA */
+    grid-template-columns: 1fr; 
     gap: 15px;
 
     padding: 20px;
   }
   .about-box {
-  min-width: 0; /* 🔥 evita overflow en grid */
+  min-width: 0; 
 }
     .about-box-Contact {
     gap: 15px;
@@ -298,11 +298,11 @@
 }
 
   .about-box-inside-skills {
-    grid-template-columns: 1fr; /* 🔥 perfecto */
+    grid-template-columns: 1fr; 
   }
 
   .about-box-knowledge {
-    flex-direction: column; /* 🔥 ya lo tenías (bien) */
+    flex-direction: column; 
     gap: 15px;
   }
     .software-icons img {

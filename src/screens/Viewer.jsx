@@ -54,7 +54,7 @@ export default function Viewer({ setScreen, selectedModel, language}) {
     maps[map] = true
    })
 
-    setActiveMaps(maps) // 🔥 FALTABA ESTO
+    setActiveMaps(maps)
 
  }, [activeModel])
 
@@ -121,7 +121,7 @@ export default function Viewer({ setScreen, selectedModel, language}) {
       target: controls.target.toArray()
     }
 
-    console.log("📸 CAMERA SNAPSHOT:", data)
+    console.log
    }
 
    window.addEventListener("keydown", handleKey)

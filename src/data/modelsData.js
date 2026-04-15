@@ -1,24 +1,16 @@
-// ==============================
-// 🧠 BASE DE DATOS CENTRAL DE MODELOS
-// ==============================
-// Aquí se define TODO lo relacionado con cada modelo:
-// - nombre
-// - ruta
-// - descripción
-// - software
-// - secciones disponibles
+
 
 export const MODELS = [
 
-  // ==============================
-  // 🔫 MODELO 0 - WEAPON
-  // ==============================
+
+  //  MODELO 0 - WEAPON
+
   {
     name: `Weapon 
     M-240B`,
     path: "/models/Weapon_Portfolio_04.glb",
 
-    // Texto descriptivo
+   
     description: {
       en:`Hard Surface 3D asset, a recreation of the M-240B weapon.
       
@@ -39,7 +31,7 @@ export const MODELS = [
     }
    ],
 
-    // Software utilizado
+   
     software: [
       { name: "Blender", icon: "/icons/Blender_Icon.png" },
       { name: "Plasticity", icon: "/icons/Plasticity_Icon.png" },
@@ -59,18 +51,18 @@ export const MODELS = [
 lights: [
   { type: "ambient", intensity: 0.9, color: "#ffffff" },
 
-  { type: "directional", position: [3, 5, -2], intensity: 2.5, color: "#f7ceaa" }, // cálido
+  { type: "directional", position: [3, 5, -2], intensity: 2.5, color: "#f7ceaa" }, 
 
-  { type: "directional", position: [-3, 2, 2], intensity: 2, color: "#dab4b4" } // frío (rim)
+  { type: "directional", position: [-3, 2, 2], intensity: 2, color: "#dab4b4" } 
 ],
 
-    // Qué tabs tiene este modelo
+    
     sections: ["description", "uv", "render"],
   },
 
-  // ==============================
-  // 🔥 MODELO 1 - ZIPPO
-  // ==============================
+
+  //  MODELO 1 - ZIPPO
+ 
   {
     name: "Zippo Lighter",
     path: "/models/Zippo_Portfolio_01.glb",
@@ -110,17 +102,17 @@ lights: [
 lights: [
   { type: "ambient", intensity: 0.15, color: "#ffffff" },
 
-  { type: "directional", position: [3, 5, -2], intensity: 2, color: "#f7ceaa" }, // cálido
+  { type: "directional", position: [3, 5, -2], intensity: 2, color: "#f7ceaa" }, 
 
-  { type: "directional", position: [-3, 2, 2], intensity: 1, color: "#ffc4c4" } // frío (rim)
+  { type: "directional", position: [-3, 2, 2], intensity: 1, color: "#ffc4c4" } 
 ],
 
     sections: ["description", "uv", "render"],
   },
 
-  // ==============================
-  // 🧱 MODELO 2 - MODULAR
-  // ==============================
+ 
+  //  MODELO 2 - MODULAR
+ 
   {
     name: `Modular Environment`,
     path: "/models/VendingMachine.glb",
@@ -139,7 +131,7 @@ lights: [
 
     },
 
-    // 👇 ahora el vídeo también vive aquí
+
     video: "/videos/Video_Modular - Trim.mp4",
 
     software: [
@@ -187,9 +179,9 @@ lights: [
     
   },
 
-  // ==============================
-  // 🧪 MODELO 3 - EXTRA
-  // ==============================
+ 
+  // MODELO 3 - EXTRA
+ 
   {
     name: "Perth",
     path: "/models/Calendar.glb",
@@ -223,7 +215,7 @@ lights: [
 },
 lights: [
   { type: "ambient", intensity: 0.5 },
-  { type: "directional", position: [3, 5, -2], intensity: 1, color: "#f7b9aa" }, // cálido
+  { type: "directional", position: [3, 5, -2], intensity: 1, color: "#f7b9aa" }, 
   { type: "directional", position: [-3, 4, -2], intensity: 1.8 }
 ],
 

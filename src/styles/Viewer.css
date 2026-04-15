@@ -439,7 +439,7 @@
 
 
 /* =========================
-   UV + MATERIAL SYSTEM
+   UV 
 ========================= */
 .Textures-title-parent {
   position: absolute;
@@ -480,8 +480,8 @@
  
 }
 .bottom-textures {
-  flex: 1;           /* 🔥 ocupa todo */
-  min-height: 0;     /* 🔥 CLAVE */
+  flex: 1;           
+  min-height: 0;     
 
   display: flex;
   align-items: flex-end;
@@ -691,12 +691,12 @@ button {
 }
 
   /* =========================
-     RIGHT UI → ABAJO
+     RIGHT UI
   ========================= */
 .right-ui {
   width: 100%;
 
-  height: 55vh;   /* 🔥 fijo estable en móvil */
+  height: 55vh;   
 
   padding: 10px;
 
@@ -721,7 +721,7 @@ button {
 }
 
   /* =========================
-     ICON TABS → HORIZONTAL
+     ICON TABS
   ========================= */
   .icon-tabs {
     flex-direction: row;
@@ -809,17 +809,17 @@ button {
   }
 
   /* =========================
-     UV / TEXTURES → SCROLL HORIZONTAL
+     UV / TEXTURES 
   ========================= */
 .uv-overlay {
-  position: relative;   /* 🔥 quitamos fixed */
+  position: relative;   
   bottom: auto;
   right: auto;
 
   width: 100%;
   height: auto;
 
-  order: 2; /* 🔥 lo colocamos después del canvas */
+  order: 2; 
 
   display: block;
   margin: 10px 0;
@@ -830,13 +830,13 @@ button {
   height: auto;
 }
 
-/* quitamos comportamiento de "pegado abajo" */
+
 .bottom-textures {
   align-items: flex-start;
   padding: 0;
 }
 
-/* scroll horizontal limpio */
+
 .uv-sets-grid {
   display: flex;
   flex-direction: row;
@@ -850,12 +850,12 @@ button {
   border-radius: 8px;
 }
 
-/* columnas más compactas */
+
 .uv-set-column {
   min-width: 120px;
 }
 
-/* imágenes más pequeñas */
+
 .uv-maps-column img {
   width: 90px;
 }
